@@ -2,7 +2,7 @@
 Projet de session du cours Développement Web
 
 ## Schéma
-[Schéma Ghostly Business](./schema.png)
+![Schéma Ghostly Business](./schema.png)
 
 ## Assets
 Contient les image et fonts utilisés dans le projet.
