@@ -1,4 +1,4 @@
-# gervais_alexandre_vous-etes-le-heros
+# Ghostly Business
 Projet de session du cours Développement Web
 
 ## Assets
