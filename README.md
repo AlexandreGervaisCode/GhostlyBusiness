@@ -30,3 +30,7 @@ Le HTML du projet.
 
 ## styles.css
 Le CSS du projet.
+
+
+## script.js
+Le JavaScript du projet
