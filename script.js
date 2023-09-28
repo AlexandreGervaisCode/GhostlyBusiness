@@ -121,12 +121,24 @@ let chapters = {
         ]
     },
 }
+let debut = chapters.debut;
+let confrontationPizza = chapters.confrontationPizza;
+let confrontationSolo = chapters.confrontationSolo;
+let confrontationPro = chapters.confrontationPro;
+let mortDistraction = chapters.mortDistraction;
+let mortRien = chapters.mortRien;
+let cachette = chapters.cachette;
+let compagnon = chapters.compagnon;
+let mortCuisine = chapters.mortCuisine;
+let finPizza = chapters.finPizza;
+let finSolo = chapters.finSolo;
+let finPro = chapters.finPro;
 
-function goToChapter({destination}) {
+function goToChapter(destination) {
     if (typeof destination !== "undefined") {
-        console.log(chapters[destination].titre);
-        console.log(chapters[destination].description);
-        console.log(chapters[destination].buttons);
+        console.log(destination.titre);
+        console.log(destination.description);
+        console.log(destination.buttons);
     }
     else {
         console.log("Veuillez entrer un chapitre valide...");
