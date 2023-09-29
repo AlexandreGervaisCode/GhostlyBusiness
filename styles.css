@@ -71,7 +71,7 @@ body {
     margin-top: 10px;
 }
 
-#choice-1 {
+.choice {
     background-color: var(--white);
     color: var(--black);
     border: none;
@@ -83,42 +83,7 @@ body {
     border-radius: 5px;
 }
 
-#choice-2 {
-    order: 1;
-    background-color: var(--white);
-    color: var(--black);
-    border: none;
-    width: 100px;
-    height: 50px;
-    font-weight: 800;
-    font-size: 12px;
-    font-family: comic-sans;
-    border-radius: 5px;
-}
-
-#choice-3 {
-    background-color: var(--white);
-    color: var(--black);
-    border: none;
-    width: 100px;
-    height: 50px;
-    font-weight: 800;
-    font-size: 12px;
-    font-family: comic-sans;
-    border-radius: 5px;
-}
-
-#choice-1:hover {
-    background-color: var(--hover-white);
-    color: var(--hover-black);
-}
-
-#choice-2:hover {
-    background-color: var(--hover-white);
-    color: var(--hover-black);
-}
-
-#choice-3:hover {
+.choice:hover {
     background-color: var(--hover-white);
     color: var(--hover-black);
 }
