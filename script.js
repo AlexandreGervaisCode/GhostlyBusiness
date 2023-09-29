@@ -95,7 +95,7 @@ let chaptersObj = {
     mortCuisine: {
         titre: "Trouvé !",
         description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
-        image: "./assets/mortCuisine.jpg",
+        image: "./assets/mort-cuisine.jpg",
         buttons: [
             { titre: "Recommencer", destination: "debut" }
         ]
@@ -104,7 +104,7 @@ let chaptersObj = {
     mortRien: {
         titre: "...Quoi ?",
         description: "Vous ne faites... rien ? Le fantôme vous étrangle. Vous vous attendiez à quoi exactement ?",
-        image: "./assets/mortRien.jpg",
+        image: "./assets/mort-rien.jpg",
         buttons: [
             { titre: "Recommencer", destination: "debut" }
         ]
@@ -113,7 +113,7 @@ let chaptersObj = {
     mortDistraction: {
         titre: "Distraction !",
         description: "Vous tentez de distraire le fantôme en dansant. Peut-être que ça va le rendre confus ! ... il s'approche de vous et vous casse le cou. Vous n'auriez probablement pas avoir fait une dance Fortnite...",
-        image: "./assets/mortDistraction.jpg",
+        image: "./assets/mort-distraction.jpg",
         buttons: [
             { titre: "Recommencer", destination: "debut" }
         ]
