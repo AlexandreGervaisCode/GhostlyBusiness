@@ -58,7 +58,7 @@ let chapters = {
 
     compagnon: {
         titre: `Compagnon`,
-        description: `Qui avez vous appelez avant votre investigation ?`,
+        description: `Vous n'avez pas été détecté dans votre cachette ! Mais, qui avez vous appelez avant votre investigation ?`,
         image: "./assets/compagnon.jpg",
         buttons: [
             { titre: "Domino's", "destination": "finPizza" },
