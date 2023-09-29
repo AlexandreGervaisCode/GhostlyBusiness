@@ -1,4 +1,4 @@
-let chapters = {
+let chaptersObj = {
     debut: {
         titre: `L'appel`,
         description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appelez?`,
@@ -119,18 +119,18 @@ let chapters = {
         ]
     },
 }
-let debut = chapters.debut;
-let confrontationPizza = chapters.confrontationPizza;
-let confrontationSolo = chapters.confrontationSolo;
-let confrontationPro = chapters.confrontationPro;
-let mortDistraction = chapters.mortDistraction;
-let mortRien = chapters.mortRien;
-let cachette = chapters.cachette;
-let compagnon = chapters.compagnon;
-let mortCuisine = chapters.mortCuisine;
-let finPizza = chapters.finPizza;
-let finSolo = chapters.finSolo;
-let finPro = chapters.finPro;
+let debut = chaptersObj.debut;
+let confrontationPizza = chaptersObj.confrontationPizza;
+let confrontationSolo = chaptersObj.confrontationSolo;
+let confrontationPro = chaptersObj.confrontationPro;
+let mortDistraction = chaptersObj.mortDistraction;
+let mortRien = chaptersObj.mortRien;
+let cachette = chaptersObj.cachette;
+let compagnon = chaptersObj.compagnon;
+let mortCuisine = chaptersObj.mortCuisine;
+let finPizza = chaptersObj.finPizza;
+let finSolo = chaptersObj.finSolo;
+let finPro = chaptersObj.finPro;
 
 function goToChapter(destination) {
     if (typeof destination !== "undefined") {
