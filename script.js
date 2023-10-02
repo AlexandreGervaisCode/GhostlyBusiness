@@ -1,7 +1,7 @@
 let chaptersObj = {
     begin: {
         titre: `L'appel`,
-        description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appelez?`,
+        description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appelez?`,
         image: "./assets/begin.jpg",
         buttons: [
             { titre: "Domino's", destination: "confrontationPizza" },
@@ -141,7 +141,7 @@ function goToChapter(chapterKey) {
     chapterDescription.innerHTML = chapterKey.description;
     chapterImg.src = chapterKey.image;
     for (let index = 0; index<chapterKey.buttons.length; index++) {
-        chapterButtons.innerHTML = chapterKey.buttons[index[titre]];
+        chapterButtons.innerHTML = chapterKey.buttons[index].titre;
     }
     chapterButtons.addEventListener("click", clickFunction);
 }
