@@ -140,7 +140,8 @@ function goToChapter(chapterKey) {
     chapterTitle.innerHTML = chapterKey.titre;
     chapterDescription.innerHTML = chapterKey.description;
     chapterImg.src = chapterKey.image;
-    for (let index = 0; index<chapterKey.buttons.length; index++) {
+    
+    for (let index = 0; index < chapterKey.buttons.length; index++) {
         chapterButtons.innerHTML = chapterKey.buttons[index].titre;
     }
     chapterButtons.addEventListener("click", clickFunction);
