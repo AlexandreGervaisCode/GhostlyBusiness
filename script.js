@@ -136,19 +136,22 @@ function goToChapter(chapterKey) {
     let chapterTitle = document.querySelector("#chapter");
     let chapterDescription = document.querySelector("#text");
     let chapterImg = document.querySelector("#image");
-    let chapterButtons = document.querySelectorAll(".choice");
+    let boutons = document.querySelectorAll(".choice");
     chapterTitle.innerHTML = chapterKey.titre;
     chapterDescription.innerHTML = chapterKey.description;
     chapterImg.src = chapterKey.image;
-    
-    for (let index = 0; index < chapterKey.buttons.length; index++) {
-        chapterButtons.innerHTML = chapterKey.buttons[index].titre;
+    while (boutons.firstChild) { 
+        boutons.removeChild(boutons.firstChild); 
     }
-    chapterButtons.addEventListener("click", clickFunction);
-}
-
-function clickFunction() {
-
+    
+    for (let i = 0; i < chapitre.boutons.length; i++) { 
+    const nouveauBtn = document.createElement('button'); 
+    nouveauBtn.textContent = chapitre.boutons[i].titre;  
+    nouveauBtn.addEventListener('click', () => { 
+    goToChapter(chapitre.boutons[i].destination) 
+    }); 
+      boutons.appendChild(nouveauBtn); 
+    }; 
 }
 
 goToChapter(begin);
