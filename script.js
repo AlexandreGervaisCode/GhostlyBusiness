@@ -15,7 +15,7 @@ let chaptersObj = {
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "./assets/confrontation.jpg",
         buttons: [
-            { titre: "Confusion", "destination": "mortConfusion" },
+            { titre: "Confusion", destination: "mortConfusion" },
             { titre: "Fuir", destination: "cachette" },
             { titre: "Rien", destination: "mortRien" }
         ]
@@ -37,7 +37,7 @@ let chaptersObj = {
         description: `Les meilleurs chasseurs de créatures paranormals vont arriver sous-peu en back-up, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "./assets/confrontation.jpg",
         buttons: [
-            { titre: "distraction", "destination": "mortDistraction" },
+            { titre: "distraction", destination: "mortDistraction" },
             { titre: "Fuir", destination: "cachette" },
             { titre: "Rien", destination: "mortRien" }
         ]
@@ -70,7 +70,7 @@ let chaptersObj = {
         description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
         image: "./assets/end-pizza.jpg",
         buttons: [
-            { titre: "Recommencer", destination: "debut" }
+            { titre: "Recommencer", destination: "begin" }
         ]
     },
 
@@ -79,7 +79,7 @@ let chaptersObj = {
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Il s'enfuit de la maison. Vous avez réussi ! Mais votre client a maintenant une bosse sur la tête...",
         image: "./assets/end-solo.jpg",
         buttons: [
-            { titre: "Recommencer", destination: "debut" }
+            { titre: "Recommencer", destination: "begin" }
         ]
     },
 
@@ -88,7 +88,7 @@ let chaptersObj = {
         description: "Les professionels arrivent et, croyant que vous êtes le monstre, vous arrêtes. Même dans votre cellule dans la prison, vous entendez le cri du chien des professionnels... SCOOBY-DOO-BY DOOO !",
         image: "./assets/end-scooby.jpg",
         buttons: [
-            { titre: "Recommencer", destination: "debut" }
+            { titre: "Recommencer", destination: "begin" }
         ]
     },
 
@@ -97,7 +97,7 @@ let chaptersObj = {
         description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
         image: "./assets/mort-cuisine.jpg",
         buttons: [
-            { titre: "Recommencer", destination: "debut" }
+            { titre: "Recommencer", destination: "begin" }
         ]
     },
 
@@ -106,7 +106,7 @@ let chaptersObj = {
         description: "Vous ne faites... rien ? Le fantôme vous étrangle. Vous vous attendiez à quoi exactement ?",
         image: "./assets/mort-rien.jpg",
         buttons: [
-            { titre: "Recommencer", destination: "debut" }
+            { titre: "Recommencer", destination: "begin" }
         ]
     },
 
@@ -115,43 +115,33 @@ let chaptersObj = {
         description: "Vous tentez de distraire le fantôme en dansant. Peut-être que ça va le rendre confus ! ... il s'approche de vous et vous casse le cou. Vous n'auriez probablement pas avoir fait une dance Fortnite...",
         image: "./assets/mort-distraction.jpg",
         buttons: [
-            { titre: "Recommencer", destination: "debut" }
+            { titre: "Recommencer", destination: "begin" }
         ]
     },
 }
-let begin = chaptersObj.begin;
-let confrontationPizza = chaptersObj.confrontationPizza;
-let confrontationSolo = chaptersObj.confrontationSolo;
-let confrontationPro = chaptersObj.confrontationPro;
-let mortDistraction = chaptersObj.mortDistraction;
-let mortRien = chaptersObj.mortRien;
-let cachette = chaptersObj.cachette;
-let compagnon = chaptersObj.compagnon;
-let mortCuisine = chaptersObj.mortCuisine;
-let finPizza = chaptersObj.finPizza;
-let finSolo = chaptersObj.finSolo;
-let finPro = chaptersObj.finPro;
 
 function goToChapter(chapterKey) {
     let chapterTitle = document.querySelector("#chapter");
     let chapterDescription = document.querySelector("#text");
     let chapterImg = document.querySelector("#image");
-    let boutons = document.querySelectorAll(".choice");
+    let boutons = document.querySelector("#button-container");
     chapterTitle.innerHTML = chapterKey.titre;
     chapterDescription.innerHTML = chapterKey.description;
     chapterImg.src = chapterKey.image;
+
     while (boutons.firstChild) { 
         boutons.removeChild(boutons.firstChild); 
     }
     
-    for (let i = 0; i < chapitre.boutons.length; i++) { 
-    const nouveauBtn = document.createElement('button'); 
-    nouveauBtn.textContent = chapitre.boutons[i].titre;  
-    nouveauBtn.addEventListener('click', () => { 
-    goToChapter(chapitre.boutons[i].destination) 
-    }); 
-      boutons.appendChild(nouveauBtn); 
-    }; 
+    for (let i = 0; i < chapterKey.buttons.length; i++) { 
+        const nouveauBtn = document.createElement('button');
+        nouveauBtn.setAttribute("class", "choice");
+        nouveauBtn.textContent = chapterKey.buttons[i].titre;  
+        nouveauBtn.addEventListener('click', () => { 
+        goToChapter(chaptersObj.chapterKey.buttons[i].destination) 
+        }); 
+        boutons.appendChild(nouveauBtn); 
+    };
 }
 
-goToChapter(begin);
+goToChapter(chaptersObj.begin);
