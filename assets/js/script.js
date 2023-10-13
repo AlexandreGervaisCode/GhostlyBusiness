@@ -2,7 +2,7 @@ const chaptersObj = {
     // début
     begin: {
         titre: `L'appel`,
-        description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appelez?`,
+        description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appeler?`,
         image: "../assets/image/begin.jpg",
         buttons: [
             { titre: "Domino's", destination: "confrontationPizza" },
