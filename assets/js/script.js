@@ -3,7 +3,7 @@ let chaptersObj = {
     begin: {
         titre: `L'appel`,
         description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appelez?`,
-        image: "./assets/begin.jpg",
+        image: "../assets/image/begin.jpg",
         buttons: [
             { titre: "Domino's", destination: "confrontationPizza" },
             { titre: "Personne", destination: "confrontationSolo" },
@@ -15,7 +15,7 @@ let chaptersObj = {
     confrontationPizza: {
         titre: `Face-à-Face`,
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "./assets/confrontation.jpg",
+        image: "../assets/image/confrontation.jpg",
         buttons: [
             { titre: "Confusion", destination: "mortDistraction" },
             { titre: "Fuir", destination: "cachette" },
@@ -27,7 +27,7 @@ let chaptersObj = {
     confrontationSolo: {
         titre: `Face-à-Face`,
         description: `Après un peu de réflexion, vous déterminez que vous pouvez réussir seul. Vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "./assets/confrontation.jpg",
+        image: "../assets/image/confrontation.jpg",
         buttons: [
             { titre: "Confusion", destination: "mortDistraction" },
             { titre: "Fuir", destination: "cachette" },
@@ -39,7 +39,7 @@ let chaptersObj = {
     confrontationPro: {
         titre: `Face-à-Face`,
         description: `Les meilleurs chasseurs de créatures paranormals vont arriver sous-peu en back-up, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "./assets/confrontation.jpg",
+        image: "../assets/image/confrontation.jpg",
         buttons: [
             { titre: "distraction", destination: "mortDistraction" },
             { titre: "Fuir", destination: "cachette" },
@@ -51,7 +51,7 @@ let chaptersObj = {
     cachette: {
         titre: `Cache-Cache`,
         description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-        image: "./assets/cachette.jpg",
+        image: "../assets/image/cachette.jpg",
         buttons: [
             { titre: "Chambre", destination: "compagnon" },
             { titre: "Garage", destination: "compagnon" },
@@ -63,7 +63,7 @@ let chaptersObj = {
     compagnon: {
         titre: `Compagnon`,
         description: `Qui avez vous appelez avant votre investigation ?`,
-        image: "./assets/compagnon.jpg",
+        image: "../assets/image/compagnon.jpg",
         buttons: [
             { titre: "Domino's", destination: "finPizza" },
             { titre: "Personne", destination: "finSolo" },
@@ -75,7 +75,7 @@ let chaptersObj = {
     finPizza: {
         titre: "Fin Acceptable",
         description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
-        image: "./assets/end-pizza.jpg",
+        image: "../assets/image/end-pizza.jpg",
         buttons: [
             { titre: "Recommencer", destination: "begin" }
         ]
@@ -85,7 +85,7 @@ let chaptersObj = {
     finSolo: {
         titre: "Bonne Fin",
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Il s'enfuit de la maison. Vous avez réussi ! Mais votre client a maintenant une bosse sur la tête...",
-        image: "./assets/end-solo.jpg",
+        image: "../assets/image/end-solo.jpg",
         buttons: [
             { titre: "Recommencer", destination: "begin" }
         ]
@@ -95,7 +95,7 @@ let chaptersObj = {
     finPro: {
         titre: "Mauvaise Fin",
         description: "Les professionels arrivent et, croyant que vous êtes le monstre, vous arrêtes. Même dans votre cellule dans la prison, vous entendez le cri du chien des professionnels... SCOOBY-DOO-BY DOOO !",
-        image: "./assets/end-scooby.jpg",
+        image: "../assets/image/end-scooby.jpg",
         buttons: [
             { titre: "Recommencer", destination: "begin" }
         ]
@@ -105,7 +105,7 @@ let chaptersObj = {
     mortCuisine: {
         titre: "Trouvé !",
         description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
-        image: "./assets/mort-cuisine.jpg",
+        image: "../assets/image/mort-cuisine.jpg",
         buttons: [
             { titre: "Recommencer", destination: "begin" }
         ]
@@ -115,7 +115,7 @@ let chaptersObj = {
     mortRien: {
         titre: "...Quoi ?",
         description: "Vous ne faites... rien ? Le fantôme vous étrangle. Vous vous attendiez à quoi exactement ?",
-        image: "./assets/mort-rien.jpg",
+        image: "../assets/image/mort-rien.jpg",
         buttons: [
             { titre: "Recommencer", destination: "begin" }
         ]
@@ -125,7 +125,7 @@ let chaptersObj = {
     mortDistraction: {
         titre: "Distraction !",
         description: "Vous tentez de distraire le fantôme en dansant. Peut-être que ça va le rendre confus ! ... il s'approche de vous et vous casse le cou. Vous n'auriez probablement pas avoir fait une dance Fortnite...",
-        image: "./assets/mort-distraction.jpg",
+        image: "../assets/image/mort-distraction.jpg",
         buttons: [
             { titre: "Recommencer", destination: "begin" }
         ]
@@ -148,36 +148,36 @@ function goToChapter(chapterKey) {
         chapterImg.src = chaptersObj[chapterKey].image;
         
         // twist
-        if (chaptersObj[chapterKey] == chaptersObj.begin){
+        if (chaptersObj[chapterKey] === chaptersObj.begin){
             pizza = false;
             solo = false;
             mysteryInc = false;
         }
 
-        if (chaptersObj[chapterKey] == chaptersObj.confrontationPizza){
+        if (chaptersObj[chapterKey] === chaptersObj.confrontationPizza){
             pizza = true;
             solo = false;
             mysteryInc = false;
         }
 
-        if (chaptersObj[chapterKey] == chaptersObj.confrontationSolo){
+        if (chaptersObj[chapterKey] === chaptersObj.confrontationSolo){
             pizza = false;
             solo = true;
             mysteryInc = false;
         }
 
-        if (chaptersObj[chapterKey] == chaptersObj.confrontationPro){
+        if (chaptersObj[chapterKey] === chaptersObj.confrontationPro){
             pizza = false;
             solo = false;
             mysteryInc = true;
         }
 
         // Fin Twist
-        if (pizza == true){
+        if (pizza === true){
             chaptersObj.cachette = {
                 titre: `Cache-Cache`,
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "./assets/cachette.jpg",
+                image: "../assets/image/cachette.jpg",
                 buttons: [
                     { titre: "Chambre", destination: "finPizza" },
                     { titre: "Garage", destination: "finPizza" },
@@ -186,11 +186,11 @@ function goToChapter(chapterKey) {
             }
         }
 
-        if (solo == true){
+        if (solo === true){
             chaptersObj.cachette = {
                 titre: `Cache-Cache`,
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "./assets/cachette.jpg",
+                image: "../assets/image/cachette.jpg",
                 buttons: [
                     { titre: "Chambre", destination: "finSolo" },
                     { titre: "Garage", destination: "finSolo" },
@@ -199,11 +199,11 @@ function goToChapter(chapterKey) {
             }
         }
 
-        if (mysteryInc == true){
+        if (mysteryInc === true){
             chaptersObj.cachette = {
                 titre: `Cache-Cache`,
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "./assets/cachette.jpg",
+                image: "../assets/image/cachette.jpg",
                 buttons: [
                     { titre: "Chambre", destination: "finPro" },
                     { titre: "Garage", destination: "finPro" },

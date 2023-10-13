@@ -1,0 +1,89 @@
+@font-face {
+    font-family: October-Crow;
+    src: url(../fonts/OctoberCrow.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: comic-sans;
+    src: url(../fonts/COMIC.TTF) format("truetype");
+}
+
+:root {
+    --black: #191919;
+    --grey: #272727;
+    --white: #dedede;
+    --hover-black: #000000;
+    --hover-white: #ffffff;
+}
+
+body {
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#Ghostly-Business {
+    width: 600px;
+    height: 710px;
+    background-color: var(--grey);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo {
+    text-align: center;
+    color: var(--white);
+    font-family: October-Crow;
+    font-size: 50px;
+}
+
+#chapter {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--white);
+    font-family: comic-sans;
+}
+
+#text {
+    text-align: center;
+    font-weight: 600;
+    color: var(--white);
+    font-family: comic-sans;
+}
+
+
+#image {
+    width: 100%;
+    object-fit: cover;
+    align-self: flex-end;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.choice {
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    width: 100px;
+    height: 50px;
+    font-weight: 800;
+    font-size: 12px;
+    font-family: comic-sans;
+    border-radius: 5px;
+}
+
+.choice:hover {
+    background-color: var(--hover-white);
+    color: var(--hover-black);
+}
