@@ -2,7 +2,7 @@
 Projet de session du cours Développement Web
 
 ## Schéma
-![Schéma Ghostly Business](./schema.png)
+![Schéma Ghostly Business](./assets/drawio/schema.png)
 
 ### Genre de l'aventure ?
 Absurde
@@ -23,14 +23,7 @@ Police des boutons : #191919
 Police des boutons en hover : #000000
 
 ## Assets
-Contient les image et fonts utilisés dans le projet.
+Contient les images, les fonts, le script, le Draw.io et le css du projet
 
 ## index.html
 Le HTML du projet.
-
-## styles.css
-Le CSS du projet.
-
-
-## script.js
-Le JavaScript du projet
