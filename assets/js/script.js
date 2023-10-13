@@ -59,7 +59,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre temporaire
+    // Chapitre de catch d'erreur
     compagnon: {
         titre: `Compagnon`,
         description: `Qui avez vous appelez avant votre investigation ?`,
@@ -71,7 +71,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre finale, fin acceptable, si chapitre 2 choix 1
+    // Chapitre finale, fin acceptable, si chapitre 2 choix Domino's
     finPizza: {
         titre: "Fin Acceptable",
         description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
@@ -81,7 +81,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre finale, bonne fin, si chapitre 2 choix 2
+    // Chapitre finale, bonne fin, si chapitre 2 choix Personne
     finSolo: {
         titre: "Bonne Fin",
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Il s'enfuit de la maison. Vous avez réussi ! Mais votre client a maintenant une bosse sur la tête...",
@@ -91,7 +91,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre finale, mauvaise fin, si chapitre 2 choix 3
+    // Chapitre finale, mauvaise fin, si chapitre 2 choix Professionnels
     finPro: {
         titre: "Mauvaise Fin",
         description: "Les professionels arrivent et, croyant que vous êtes le monstre, vous arrêtes. Même dans votre cellule dans la prison, vous entendez le cri du chien des professionnels... SCOOBY-DOO-BY DOOO !",
