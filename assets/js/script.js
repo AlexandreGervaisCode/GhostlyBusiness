@@ -227,7 +227,9 @@ function goToChapter(chapterKey) {
             });
 			boutons.appendChild(nouveauBtn); 
 		  }; 
-	}
+	} else {
+        console.log("...you broke it.");
+    }
 }
 
 goToChapter("begin");
