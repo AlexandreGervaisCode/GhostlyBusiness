@@ -17,7 +17,7 @@ let chaptersObj = {
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "./assets/confrontation.jpg",
         buttons: [
-            { titre: "Confusion", destination: "mortConfusion" },
+            { titre: "Confusion", destination: "mortDistraction" },
             { titre: "Fuir", destination: "cachette" },
             { titre: "Rien", destination: "mortRien" }
         ]
@@ -29,7 +29,7 @@ let chaptersObj = {
         description: `Après un peu de réflexion, vous déterminez que vous pouvez réussir seul. Vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "./assets/confrontation.jpg",
         buttons: [
-            { titre: "Confusion", destination: "mortConfusion" },
+            { titre: "Confusion", destination: "mortDistraction" },
             { titre: "Fuir", destination: "cachette" },
             { titre: "Rien", destination: "mortRien" }
         ]
@@ -147,6 +147,7 @@ function goToChapter(chapterKey) {
         chapterDescription.innerHTML = chaptersObj[chapterKey].description;
         chapterImg.src = chaptersObj[chapterKey].image;
         
+        // twist
         if (chaptersObj[chapterKey] == chaptersObj.begin){
             pizza = false;
             solo = false;
@@ -169,6 +170,46 @@ function goToChapter(chapterKey) {
             pizza = false;
             solo = false;
             mysteryInc = true;
+        }
+
+        // Fin Twist
+        if (pizza == true){
+            chaptersObj.cachette = {
+                titre: `Cache-Cache`,
+                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
+                image: "./assets/cachette.jpg",
+                buttons: [
+                    { titre: "Chambre", destination: "finPizza" },
+                    { titre: "Garage", destination: "finPizza" },
+                    { titre: "Cuisine", destination: "mortCuisine" }
+                ]
+            }
+        }
+
+        if (solo == true){
+            chaptersObj.cachette = {
+                titre: `Cache-Cache`,
+                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
+                image: "./assets/cachette.jpg",
+                buttons: [
+                    { titre: "Chambre", destination: "finSolo" },
+                    { titre: "Garage", destination: "finSolo" },
+                    { titre: "Cuisine", destination: "mortCuisine" }
+                ]
+            }
+        }
+
+        if (mysteryInc == true){
+            chaptersObj.cachette = {
+                titre: `Cache-Cache`,
+                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
+                image: "./assets/cachette.jpg",
+                buttons: [
+                    { titre: "Chambre", destination: "finPro" },
+                    { titre: "Garage", destination: "finPro" },
+                    { titre: "Cuisine", destination: "mortCuisine" }
+                ]
+            }
         }
 
         const boutons = document.querySelector('#button-container'); 
