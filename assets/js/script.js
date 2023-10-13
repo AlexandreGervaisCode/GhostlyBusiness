@@ -11,7 +11,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre 2, choix 1
+    // Chapitre 2, choix Domino's
     confrontationPizza: {
         titre: `Face-à-Face`,
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
@@ -23,7 +23,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre 2, choix 2
+    // Chapitre 2, choix Personne
     confrontationSolo: {
         titre: `Face-à-Face`,
         description: `Après un peu de réflexion, vous déterminez que vous pouvez réussir seul. Vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
@@ -35,7 +35,7 @@ const chaptersObj = {
         ]
     },
 
-    // Chapitre 2, choix 3
+    // Chapitre 2, choix Professionnels
     confrontationPro: {
         titre: `Face-à-Face`,
         description: `Les meilleurs chasseurs de créatures paranormals vont arriver sous-peu en back-up, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
