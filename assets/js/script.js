@@ -1,4 +1,4 @@
-let chaptersObj = {
+const chaptersObj = {
     // début
     begin: {
         titre: `L'appel`,
@@ -143,30 +143,31 @@ let mysteryInc = false;
 
 function goToChapter(chapterKey) {
     if (chaptersObj[chapterKey]) {
-        chapterTitle.innerHTML = chaptersObj[chapterKey].titre;
-        chapterDescription.innerHTML = chaptersObj[chapterKey].description;
-        chapterImg.src = chaptersObj[chapterKey].image;
+        const chapterInput = chaptersObj[chapterKey];
+        chapterTitle.innerHTML = chapterInput.titre;
+        chapterDescription.innerHTML = chapterInput.description;
+        chapterImg.src = chapterInput.image;
         
         // twist
-        if (chaptersObj[chapterKey] === chaptersObj.begin){
+        if (chapterInput === chaptersObj.begin){
             pizza = false;
             solo = false;
             mysteryInc = false;
         }
 
-        if (chaptersObj[chapterKey] === chaptersObj.confrontationPizza){
+        if (chapterInput === chaptersObj.confrontationPizza){
             pizza = true;
             solo = false;
             mysteryInc = false;
         }
 
-        if (chaptersObj[chapterKey] === chaptersObj.confrontationSolo){
+        if (chapterInput === chaptersObj.confrontationSolo){
             pizza = false;
             solo = true;
             mysteryInc = false;
         }
 
-        if (chaptersObj[chapterKey] === chaptersObj.confrontationPro){
+        if (chapterInput === chaptersObj.confrontationPro){
             pizza = false;
             solo = false;
             mysteryInc = true;
@@ -217,12 +218,12 @@ function goToChapter(chapterKey) {
   		boutons.removeChild(boutons.firstChild); 
 		} 
 
-		for (let i = 0; i < chaptersObj[chapterKey].buttons.length; i++) { 
+		for (let i = 0; i < chapterInput.buttons.length; i++) { 
 			const nouveauBtn = document.createElement('button'); 
             nouveauBtn.setAttribute("class", "choice");
-			nouveauBtn.textContent = chaptersObj[chapterKey].buttons[i].titre; 
+			nouveauBtn.textContent = chapterInput.buttons[i].titre; 
 			nouveauBtn.addEventListener('click', function() {
-                goToChapter(chaptersObj[chapterKey].buttons[i].destination);
+                goToChapter(chapterInput.buttons[i].destination);
             });
 			boutons.appendChild(nouveauBtn); 
 		  }; 
