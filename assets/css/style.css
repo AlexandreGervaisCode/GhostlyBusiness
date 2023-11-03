@@ -1,3 +1,11 @@
+:root {
+    --black: #191919;
+    --grey: #272727;
+    --white: #dedede;
+    --hover-black: #000000;
+    --hover-white: #ffffff;
+}
+
 @font-face {
     font-family: October-Crow;
     src: url(../fonts/OctoberCrow.ttf) format("truetype");
@@ -6,14 +14,6 @@
 @font-face {
     font-family: comic-sans;
     src: url(../fonts/COMIC.TTF) format("truetype");
-}
-
-:root {
-    --black: #191919;
-    --grey: #272727;
-    --white: #dedede;
-    --hover-black: #000000;
-    --hover-white: #ffffff;
 }
 
 body {
@@ -37,6 +37,7 @@ body {
     border-radius: 5%;
     border: solid 5px var(--grey);
     width: 45%;
+    min-width: 300px;
     height: 60%;
     padding: 3%;
     overflow: hidden;
@@ -85,8 +86,10 @@ body {
     background-color: var(--white);
     color: var(--black);
     border: none;
-    width: 100px;
-    height: 50px;
+    width: 10vw;
+    min-width: 90px;
+    height: 5vh;
+    min-height: 25px;
     font-weight: 800;
     font-size: 12px;
     font-family: comic-sans;
