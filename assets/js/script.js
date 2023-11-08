@@ -5,6 +5,7 @@ const chaptersObj = {
         description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appeler?`,
         image: "../assets/image/begin.jpg",
         video: false,
+        sound: "../assets/audio/ambiance_outside.mp3",
         buttons: [{
                 titre: "Domino's",
                 destination: "confrontationPizza",
@@ -29,6 +30,7 @@ const chaptersObj = {
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
+        sound: "../assets/audio/ambiance_inside.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
@@ -53,6 +55,7 @@ const chaptersObj = {
         description: `Après un peu de réflexion, vous déterminez que vous pouvez réussir seul. Vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
+        sound: "../assets/audio/ambiance_inside.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
@@ -77,6 +80,7 @@ const chaptersObj = {
         description: `Les meilleurs chasseurs de créatures paranormals vont arriver sous-peu en back-up, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
+        sound: "../assets/audio/ambiance_inside.mp3",
         buttons: [{
                 titre: "distraction",
                 destination: "mortDistraction",
@@ -100,6 +104,7 @@ const chaptersObj = {
         titre: `Cache-Cache`,
         description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
         image: "../assets/image/cachette.jpg",
+        sound: "../assets/audio/trouble.mp3",
         video: false,
         buttons: [{
                 titre: "Chambre",
@@ -125,6 +130,7 @@ const chaptersObj = {
         description: `Qui avez vous appelez avant votre investigation ?`,
         image: "../assets/image/compagnon.jpg",
         video: false,
+        sound: "../assets/audio/an_error_has_occured.mp3",
         buttons: [{
                 titre: "Domino's",
                 destination: "finPizza",
@@ -149,6 +155,7 @@ const chaptersObj = {
         description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
         image: "../assets/image/end-pizza.jpg",
         video: "../assets/video/end-pizza.mp4",
+        sound: "../assets/audio/okay_ending.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
@@ -162,6 +169,7 @@ const chaptersObj = {
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Il s'enfuit de la maison. Vous avez réussi ! Mais votre client a maintenant une bosse sur la tête...",
         image: "../assets/image/end-solo.jpg",
         video: "../assets/video/end-solo.mp4",
+        sound: "../assets/audio/good_ending.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
@@ -175,6 +183,7 @@ const chaptersObj = {
         description: "Les professionels arrivent et, croyant que vous êtes le monstre, vous arrêtes. Même dans votre cellule dans la prison, vous entendez le cri du chien des professionnels... SCOOBY-DOO-BY DOOO !",
         image: "../assets/image/end-scooby.jpg",
         video: "../assets/video/end-scooby.mp4",
+        sound: "../assets/audio/bad_ending.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
@@ -188,6 +197,7 @@ const chaptersObj = {
         description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
         image: "../assets/image/mort-cuisine.jpg",
         video: "../assets/video/mort-cuisine.mp4",
+        sound: "../assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
@@ -201,6 +211,7 @@ const chaptersObj = {
         description: "Vous ne faites... rien ? Le fantôme vous étrangle. Vous vous attendiez à quoi exactement ?",
         image: "../assets/image/mort-rien.jpg",
         video: "../assets/video/mort-rien.mp4",
+        sound: "../assets/audio/fail_nothing.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
@@ -214,6 +225,7 @@ const chaptersObj = {
         description: "Vous tentez de distraire le fantôme en dansant. Peut-être que ça va le rendre confus ! ... il s'approche de vous et vous casse le cou. Vous n'auriez probablement pas avoir fait une dance Fortnite...",
         image: "../assets/image/mort-distraction.jpg",
         video: "../assets/video/mort-distraction.mp4",
+        sound: "../assets/audio/fail_dance.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
