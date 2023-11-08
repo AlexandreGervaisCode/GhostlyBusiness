@@ -104,8 +104,8 @@ const chaptersObj = {
         titre: `Cache-Cache`,
         description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
         image: "../assets/image/cachette.jpg",
-        sound: "../assets/audio/trouble.mp3",
         video: false,
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Chambre",
                 destination: "compagnon",
