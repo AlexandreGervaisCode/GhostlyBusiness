@@ -235,9 +235,10 @@ const chaptersObj = {
 }
 
 // liste de variables
-let chapterTitle = document.querySelector("#chapter");
-let chapterDescription = document.querySelector("#text");
-let chapterImg = document.querySelector("#image");
+const chapterTitle = document.querySelector("#chapter");
+const chapterDescription = document.querySelector("#text");
+const chapterImg = document.querySelector("#image");
+const chapterVideo = document.querySelector("#video");
 // les Twists
 let pizza = false;
 let solo = false;
@@ -248,7 +249,18 @@ function goToChapter(chapterKey) {
         const chapterInput = chaptersObj[chapterKey];
         chapterTitle.innerHTML = chapterInput.titre;
         chapterDescription.innerHTML = chapterInput.description;
-        chapterImg.src = chapterInput.image;
+
+        if(chapterInput.image !== false){
+            chapterVideo.style.display = "none";
+            chapterImg.style.display = "block";
+            chapterImg.src = chapterInput.image;
+        } else if (chapterInput.video !== false){
+            chapterImg.style.display = "none";
+            chapterVideo.style.display = "block";
+            chapterVideo.src = chapterInput.video;
+        } else {
+            console.log("oh no");
+        }
 
         // twist
         if (chapterInput === chaptersObj.begin) {
