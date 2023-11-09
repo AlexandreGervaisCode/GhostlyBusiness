@@ -110,3 +110,7 @@ body {
     background-color: var(--hover-white);
     color: var(--hover-black);
 }
+
+.hidden {
+    display: none;
+}

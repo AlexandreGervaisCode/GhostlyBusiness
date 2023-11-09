@@ -250,14 +250,14 @@ function goToChapter(chapterKey) {
         chapterTitle.innerHTML = chapterInput.titre;
         chapterDescription.innerHTML = chapterInput.description;
 
-        if(chapterInput.image !== false){
-            chapterVideo.style.display = "none";
-            chapterImg.style.display = "block";
-            chapterImg.src = chapterInput.image;
-        } else if (chapterInput.video !== false){
-            chapterImg.style.display = "none";
-            chapterVideo.style.display = "block";
+        if(chapterInput.image === false){
+            chapterImg.classList.add("hidden");
+            chapterVideo.classList.remove("hidden");
             chapterVideo.src = chapterInput.video;
+        } else if (chapterInput.video === false){
+            chapterVideo.classList.add("hidden");
+            chapterImg.classList.remove("hidden");
+            chapterImg.src = chapterInput.image;
         } else {
             console.log("oh no");
         }
