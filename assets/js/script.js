@@ -19,7 +19,7 @@ const chaptersObj = {
             {
                 titre: "Professionels",
                 destination: "confrontationPro",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3"
             }
         ]
     },
@@ -30,7 +30,7 @@ const chaptersObj = {
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/ambiance.mp3",
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
@@ -55,7 +55,7 @@ const chaptersObj = {
         description: `Après un peu de réflexion, vous déterminez que vous pouvez réussir seul. Vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/ambiance_inside.mp3",
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
@@ -80,9 +80,9 @@ const chaptersObj = {
         description: `Les meilleurs chasseurs de créatures paranormals vont arriver sous-peu en back-up, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/ambiance_inside.mp3",
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
-                titre: "distraction",
+                titre: "Confusion",
                 destination: "mortDistraction",
                 sound: "../assets/audio/badChoice.mp3"
             },
@@ -239,6 +239,9 @@ const chapterTitle = document.querySelector("#chapter");
 const chapterDescription = document.querySelector("#text");
 const chapterImg = document.querySelector("#image");
 const chapterVideo = document.querySelector("#video");
+const bgMusic = document.createElement("audio");
+const soundEffect = document.createElement("audio");
+bgMusic.loop = true;
 // les Twists
 let pizza = false;
 let solo = false;
@@ -249,7 +252,10 @@ function goToChapter(chapterKey) {
         const chapterInput = chaptersObj[chapterKey];
         chapterTitle.innerHTML = chapterInput.titre;
         chapterDescription.innerHTML = chapterInput.description;
+        bgMusic.src = chapterInput.sound;
+        bgMusic.play();
 
+        // Toggle Image/Video
         if(chapterInput.image === false){
             chapterImg.classList.add("hidden");
             chapterVideo.classList.remove("hidden");
@@ -294,6 +300,7 @@ function goToChapter(chapterKey) {
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
                 image: "../assets/image/cachette.jpg",
                 video: false,
+                sound: "../assets/audio/trouble.mp3",
                 buttons: [{
                         titre: "Chambre",
                         destination: "finPizza",
@@ -319,6 +326,7 @@ function goToChapter(chapterKey) {
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
                 image: "../assets/image/cachette.jpg",
                 video: false,
+                sound: "../assets/audio/trouble.mp3",
                 buttons: [{
                         titre: "Chambre",
                         destination: "finSolo",
@@ -344,6 +352,7 @@ function goToChapter(chapterKey) {
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
                 image: "../assets/image/cachette.jpg",
                 video: false,
+                sound: "../assets/audio/trouble.mp3",
                 buttons: [{
                         titre: "Chambre",
                         destination: "finPro",
@@ -363,6 +372,7 @@ function goToChapter(chapterKey) {
             }
         }
 
+        // Boucle Boutons
         const boutons = document.querySelector('#button-container');
         while (boutons.firstChild) {
             boutons.removeChild(boutons.firstChild);
@@ -373,7 +383,9 @@ function goToChapter(chapterKey) {
             nouveauBtn.setAttribute("class", "choice");
             nouveauBtn.textContent = chapterInput.buttons[i].titre;
             nouveauBtn.addEventListener('click', function () {
+                soundEffect.src = chapterInput.buttons[i].sound;
                 goToChapter(chapterInput.buttons[i].destination);
+                soundEffect.play();
             });
             boutons.appendChild(nouveauBtn);
         };
