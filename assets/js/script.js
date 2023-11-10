@@ -5,7 +5,7 @@ const chaptersObj = {
         description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appeler?`,
         image: false,
         video: "../assets/video/begin.mp4",
-        sound: "../assets/audio/ambiance_outside.mp3",
+        sound: "../assets/audio/ambiance.mp3",
         buttons: [{
                 titre: "Domino's",
                 destination: "confrontationPizza",
@@ -30,7 +30,7 @@ const chaptersObj = {
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
         image: "../assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/ambiance_inside.mp3",
+        sound: "../assets/audio/ambiance.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
@@ -293,15 +293,16 @@ function goToChapter(chapterKey) {
                 titre: `Cache-Cache`,
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
                 image: "../assets/image/cachette.jpg",
+                video: false,
                 buttons: [{
                         titre: "Chambre",
                         destination: "finPizza",
-                        sound: "../assets/audio/midChoice.mp3"
+                        sound: "../assets/audio/goodChoice.mp3"
                     },
                     {
                         titre: "Garage",
                         destination: "finPizza",
-                        sound: "../assets/audio/midChoice.mp3"
+                        sound: "../assets/audio/goodChoice.mp3"
                     },
                     {
                         titre: "Cuisine",
@@ -317,6 +318,7 @@ function goToChapter(chapterKey) {
                 titre: `Cache-Cache`,
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
                 image: "../assets/image/cachette.jpg",
+                video: false,
                 buttons: [{
                         titre: "Chambre",
                         destination: "finSolo",
@@ -341,6 +343,7 @@ function goToChapter(chapterKey) {
                 titre: `Cache-Cache`,
                 description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
                 image: "../assets/image/cachette.jpg",
+                video: false,
                 buttons: [{
                         titre: "Chambre",
                         destination: "finPro",
