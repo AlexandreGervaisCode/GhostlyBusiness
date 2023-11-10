@@ -258,11 +258,15 @@ const chaptersObj = {
     },
 }
 
-// liste de variables
+// DOM selector
 const chapterTitle = document.querySelector("#chapter");
 const chapterDescription = document.querySelector("#text");
 const chapterImg = document.querySelector("#image");
 const chapterVideo = document.querySelector("#video");
+const body = document.querySelector("body");
+const reset = document.querySelector("#reset");
+const btnLight = document.querySelector("#light");
+const btnSuccess = document.querySelector("#success");
 const bgMusic = document.createElement("audio");
 const soundEffect = document.createElement("audio");
 bgMusic.loop = true;
@@ -280,11 +284,11 @@ function goToChapter(chapterKey) {
         bgMusic.play();
 
         // Toggle Image/Video
-        if(chapterInput.image === false){
+        if (chapterInput.image === false) {
             chapterImg.classList.add("hidden");
             chapterVideo.classList.remove("hidden");
             chapterVideo.src = chapterInput.video;
-        } else if (chapterInput.video === false){
+        } else if (chapterInput.video === false) {
             chapterVideo.classList.add("hidden");
             chapterImg.classList.remove("hidden");
             chapterImg.src = chapterInput.image;
@@ -405,6 +409,12 @@ function goToChapter(chapterKey) {
             }
         }
 
+        // Rappel du chapitre
+        localStorage.setItem("progress", chapterKey);
+        localStorage.setItem("twistPizza", pizza);
+        localStorage.setItem("twistSolo", solo);
+        localStorage.setItem("twistPro", mysteryInc);
+
         // Boucle Boutons
         const boutons = document.querySelector('#button-container');
         while (boutons.firstChild) {
@@ -428,4 +438,108 @@ function goToChapter(chapterKey) {
     }
 }
 
-goToChapter("begin");
+if (localStorage.getItem("progress")) {
+    let currentProgress = localStorage.getItem("progress");
+    let pizzaTwist = localStorage.getItem("twistPizza");
+    let soloTwist = localStorage.getItem("twistSolo");
+    let proTwist = localStorage.getItem("twistPro");
+    pizza = pizzaTwist;
+    solo = soloTwist;
+    mysteryInc = proTwist;
+    if (currentProgress === "cachette") {
+        if (pizza === "true") {
+            chaptersObj.cachette = {
+                titre: `Cache-Cache`,
+                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
+                image: "../assets/image/cachette.jpg",
+                video: false,
+                sound: "../assets/audio/trouble.mp3",
+                buttons: [{
+                        titre: "Chambre",
+                        destination: "finPizza",
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans la chambre"
+                    },
+                    {
+                        titre: "Garage",
+                        destination: "finPizza",
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans le garage"
+                    },
+                    {
+                        titre: "Cuisine",
+                        destination: "mortCuisine",
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la cuisine"
+                    }
+                ]
+            }
+        }
+
+        if (solo === "true") {
+            chaptersObj.cachette = {
+                titre: `Cache-Cache`,
+                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
+                image: "../assets/image/cachette.jpg",
+                video: false,
+                sound: "../assets/audio/trouble.mp3",
+                buttons: [{
+                        titre: "Chambre",
+                        destination: "finSolo",
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans la chambre"
+                    },
+                    {
+                        titre: "Garage",
+                        destination: "finSolo",
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans le garage"
+                    },
+                    {
+                        titre: "Cuisine",
+                        destination: "mortCuisine",
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la cuisine"
+                    }
+                ]
+            }
+        }
+
+        if (mysteryInc === "true") {
+            chaptersObj.cachette = {
+                titre: `Cache-Cache`,
+                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
+                image: "../assets/image/cachette.jpg",
+                video: false,
+                sound: "../assets/audio/trouble.mp3",
+                buttons: [{
+                        titre: "Chambre",
+                        destination: "finPro",
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la chambre"
+                    },
+                    {
+                        titre: "Garage",
+                        destination: "finPro",
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans le garage"
+                    },
+                    {
+                        titre: "Cuisine",
+                        destination: "mortCuisine",
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la cuisine"
+                    }
+                ]
+            }
+        }
+    }
+    goToChapter(currentProgress);
+} else {
+    goToChapter("begin");
+}
+
+reset.addEventListener("click", function () {
+    localStorage.clear();
+    goToChapter("begin");
+})
