@@ -4,6 +4,7 @@
     --white: #dedede;
     --hover-black: #000000;
     --hover-white: #ffffff;
+    --gameBG: #2f2f2f;
 }
 
 @font-face {
@@ -26,6 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #Ghostly-Business {
@@ -35,9 +37,10 @@ body {
     flex-direction: column;
     text-align: center;
     border-radius: 5%;
+    background-color: var(--gameBG);
     border: solid 5px var(--grey);
-    width: 45%;
-    min-width: 300px;
+    width: 50%;
+    min-width: 410px;
     min-height: 300px;
     height: 60%;
     padding: 3%;
@@ -111,4 +114,52 @@ body {
 
 .hidden {
     display: none;
+}
+
+.achievement-container{
+    display: flex;
+    border-radius: 5%;
+    background-color: var(--gameBG);
+    border: solid 5px var(--grey);
+    width: 40%;
+    min-width: 405px;
+    min-height: 200px;
+    height: 60%;
+    padding: 3%;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.achievement-text{
+    font-size: 20px;
+    font-family: comic-sans;
+}
+
+.achievement-list{
+    display: flex;
+    width: 100%;
+    min-width: 300px;
+    min-height: 300px;
+    height: 100%;
+    padding: 3%;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.achievement{
+    flex-basis: 25%;
+}
+
+.textAchievement{
+    width: 75px;
+}
+
+/*Light Mode*/
+.light {
+    --black: #fcfcfc;
+    --grey: #c0c0c0;
+    --white: #202020;
+    --hover-black: #e5e5e5;
+    --hover-white: #000000;
+    --gameBG: #e3e3e3;
 }

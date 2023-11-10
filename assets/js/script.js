@@ -9,17 +9,20 @@ const chaptersObj = {
         buttons: [{
                 titre: "Domino's",
                 destination: "confrontationPizza",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Commander une pizza"
             },
             {
                 titre: "Personne",
                 destination: "confrontationSolo",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Y aller seul"
             },
             {
                 titre: "Professionels",
                 destination: "confrontationPro",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Appeler des professionnels en backup"
             }
         ]
     },
@@ -34,17 +37,20 @@ const chaptersObj = {
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "N'appuyez pas sur ce bouton"
             }
         ]
     },
@@ -59,17 +65,20 @@ const chaptersObj = {
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "N'appuyez pas sur ce bouton"
             }
         ]
     },
@@ -84,17 +93,20 @@ const chaptersObj = {
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "N'appuyez pas sur ce bouton"
             }
         ]
     },
@@ -109,17 +121,20 @@ const chaptersObj = {
         buttons: [{
                 titre: "Chambre",
                 destination: "compagnon",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Aller se cacher dans la chambre"
             },
             {
                 titre: "Garage",
                 destination: "compagnon",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Aller se cacher dans le garage"
             },
             {
                 titre: "Cuisine",
                 destination: "mortCuisine",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Aller se cacher dans la cuisine"
             }
         ]
     },
@@ -134,17 +149,20 @@ const chaptersObj = {
         buttons: [{
                 titre: "Domino's",
                 destination: "finPizza",
-                sound: "../assets/audio/midChoice.mp3"
+                sound: "../assets/audio/midChoice.mp3",
+                hover: "Fin Acceptable"
             },
             {
                 titre: "Personne",
                 destination: "finSolo",
-                sound: "../assets/audio/goodChoice.mp3"
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Bonne Fin"
             },
             {
                 titre: "Professionels",
                 destination: "finPro",
-                sound: "../assets/audio/badChoice.mp3"
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Mauvais Fin"
             }
         ]
     },
@@ -159,7 +177,8 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/midChoice.mp3"
+            sound: "../assets/audio/midChoice.mp3",
+            hover: "Retourner au début"
         }]
     },
 
@@ -173,7 +192,8 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/goodChoice.mp3"
+            sound: "../assets/audio/goodChoice.mp3",
+            hover: "Retouner au début"
         }]
     },
 
@@ -187,7 +207,8 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3"
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
         }]
     },
 
@@ -201,7 +222,8 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3"
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
         }]
     },
 
@@ -215,7 +237,8 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3"
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Je n'ai aucun mot"
         }]
     },
 
@@ -229,7 +252,8 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3"
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
         }]
     },
 }
@@ -304,17 +328,20 @@ function goToChapter(chapterKey) {
                 buttons: [{
                         titre: "Chambre",
                         destination: "finPizza",
-                        sound: "../assets/audio/goodChoice.mp3"
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans la chambre"
                     },
                     {
                         titre: "Garage",
                         destination: "finPizza",
-                        sound: "../assets/audio/goodChoice.mp3"
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans le garage"
                     },
                     {
                         titre: "Cuisine",
                         destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3"
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la cuisine"
                     }
                 ]
             }
@@ -330,17 +357,20 @@ function goToChapter(chapterKey) {
                 buttons: [{
                         titre: "Chambre",
                         destination: "finSolo",
-                        sound: "../assets/audio/goodChoice.mp3"
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans la chambre"
                     },
                     {
                         titre: "Garage",
                         destination: "finSolo",
-                        sound: "../assets/audio/goodChoice.mp3"
+                        sound: "../assets/audio/goodChoice.mp3",
+                        hover: "Aller se cacher dans le garage"
                     },
                     {
                         titre: "Cuisine",
                         destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3"
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la cuisine"
                     }
                 ]
             }
@@ -356,17 +386,20 @@ function goToChapter(chapterKey) {
                 buttons: [{
                         titre: "Chambre",
                         destination: "finPro",
-                        sound: "../assets/audio/badChoice.mp3"
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la chambre"
                     },
                     {
                         titre: "Garage",
                         destination: "finPro",
-                        sound: "../assets/audio/badChoice.mp3"
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans le garage"
                     },
                     {
                         titre: "Cuisine",
                         destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3"
+                        sound: "../assets/audio/badChoice.mp3",
+                        hover: "Aller se cacher dans la cuisine"
                     }
                 ]
             }
@@ -382,6 +415,7 @@ function goToChapter(chapterKey) {
             const nouveauBtn = document.createElement('button');
             nouveauBtn.setAttribute("class", "choice");
             nouveauBtn.textContent = chapterInput.buttons[i].titre;
+            nouveauBtn.title = chapterInput.buttons[i].hover;
             nouveauBtn.addEventListener('click', function () {
                 soundEffect.src = chapterInput.buttons[i].sound;
                 goToChapter(chapterInput.buttons[i].destination);
