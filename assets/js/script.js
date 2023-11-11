@@ -120,23 +120,142 @@ const chaptersObj = {
         sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Chambre",
-                destination: "compagnon",
+                destination: "chambre",
                 sound: "../assets/audio/goodChoice.mp3",
                 hover: "Aller se cacher dans la chambre"
             },
             {
-                titre: "Garage",
-                destination: "compagnon",
+                titre: "Cuisine",
+                destination: "cuisine",
                 sound: "../assets/audio/goodChoice.mp3",
-                hover: "Aller se cacher dans le garage"
+                hover: "Aller se cacher dans la cuisine"
             },
             {
-                titre: "Cuisine",
-                destination: "mortCuisine",
-                sound: "../assets/audio/badChoice.mp3",
-                hover: "Aller se cacher dans la cuisine"
+                titre: "Garage",
+                destination: "garage",
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Aller se cacher dans le garage"
             }
         ]
+    },
+
+    // Chapitres 4
+    chambre: {
+        titre: `Des moutons et des barrières mortelles`,
+        description: `Vous êtes maintenant caché derrière une armoire, avec quelques autres cachettes à proximité, dans une chambre. Où se cacher ?`,
+        image: false,
+        video: "../assets/video/cachette-chambre.mp4",
+        sound: "../assets/audio/heartbeat.mp3",
+        buttons: [{
+                titre: "Sous le lit",
+                destination: "mortLit",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Aller se cacher sous le lit"
+            },
+            {
+                titre: "Dans l'armoire",
+                destination: "mortArmoire",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Se cacher dans l'armoire"
+            },
+            {
+                titre: "Attendre",
+                destination: "armoire",
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Rester derrière l'armoire"
+            }
+        ]
+    },
+
+    cuisine: {
+        titre: `Hell's Kitchen`,
+        description: `Vous êtes maintenant caché derrière un comptoir, avec divers outils sur le comptoir, dans la cuisine. Quelle est votre prochaine action ?`,
+        image: false,
+        video: "../assets/video/cachette-cuisine.mp4",
+        sound: "../assets/audio/heartbeat.mp3",
+        buttons: [{
+                titre: "Attendre",
+                destination: "mortCuisineRien",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Aller se cacher dans la chambre"
+            },
+            {
+                titre: "Couteau",
+                destination: "mortCuisineCouteau",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Aller se cacher dans le garage"
+            }
+        ]
+    },
+
+    garage: {
+        titre: `Pit Stop`,
+        description: `Vous êtes maintenant caché derrière une étagère, entouré de différents objets, dans le garage. Quelle est votre prochaine action ?`,
+        image: false,
+        video: "../assets/video/cachette-garage.mp4",
+        sound: "../assets/audio/heartbeat.mp3",
+        buttons: [{
+                titre: "Attendre",
+                destination: "etagere",
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Rester derrière l'étagère"
+            },
+            {
+                titre: "Voiture",
+                destination: "mortVoiture",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Aller se cacher en-dessous la voiture"
+            },
+            {
+                titre: "Aspirateur",
+                destination: "aspirateur",
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Prendre l'aspirateur dans le coin de la salle"
+            }
+        ]
+    },
+
+    // Chapitre 5
+    armoire: {
+        titre: "Introuvable",
+        description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
+        image: "../assets/image/armoire.jpg",
+        video: false,
+        sound: "../assets/audio/heartbeat.mp3",
+        buttons: [{
+            titre: "Fin",
+            destination: "compagnon",
+            sound: "../assets/audio/goodChoice.mp3",
+            hover: "Accèder à la fin de cette aventure"
+        }]
+    },
+
+    etagere: {
+        titre: "Introuvable",
+        description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
+        image: "../assets/image/etagere.jpg",
+        video: false,
+        sound: "../assets/audio/heartbeat.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "compagnon",
+            sound: "../assets/audio/goodChoice.mp3",
+            hover: "Accèder à la fin de cette aventure"
+        }]
+    },
+
+    aspirateur: {
+        titre: "Introuvable",
+        description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
+        image: "../assets/image/aspirateur.jpg",
+        video: false,
+        sound: "../assets/audio/heartbeat.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "compagnon",
+            sound: "../assets/audio/goodChoice.mp3",
+            hover: "Accèder à la fin de cette aventure"
+        }]
     },
 
     // Chapitre de catch d'erreur
@@ -149,7 +268,7 @@ const chaptersObj = {
         buttons: [{
                 titre: "Domino's",
                 destination: "finPizza",
-                sound: "../assets/audio/midChoice.mp3",
+                sound: "../assets/audio/goodChoice.mp3",
                 hover: "Fin Acceptable"
             },
             {
@@ -177,7 +296,7 @@ const chaptersObj = {
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/midChoice.mp3",
+            sound: "../assets/audio/goodChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -212,22 +331,7 @@ const chaptersObj = {
         }]
     },
 
-    // mort chapitre 3
-    mortCuisine: {
-        titre: "Trouvé !",
-        description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
-        image: false,
-        video: "../assets/video/mort-cuisine.mp4",
-        sound: "../assets/audio/fail.mp3",
-        buttons: [{
-            titre: "Recommencer",
-            destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
-            hover: "Retourner au début"
-        }]
-    },
-
-    // première mort chapitre 2
+    // morts chapitre 2
     mortRien: {
         titre: "...Quoi ?",
         description: "Vous ne faites... rien ? Le fantôme vous étrangle. Vous vous attendiez à quoi exactement ?",
@@ -242,13 +346,85 @@ const chaptersObj = {
         }]
     },
 
-    // deuxième mort chapitre 2
     mortDistraction: {
         titre: "Distraction !",
         description: "Vous tentez de distraire le fantôme en dansant. Peut-être que ça va le rendre confus ! ... il s'approche de vous et vous casse le cou. Vous n'auriez probablement pas avoir fait une dance Fortnite...",
         image: false,
         video: "../assets/video/mort-distraction.mp4",
         sound: "../assets/audio/fail_dance.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "begin",
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+    // morts chapitre 4 dans la chambre
+    mortLit: {
+        titre: "Un Nouveau Problème...",
+        description: "Vous allez vous cacher sous le lit non détecté. Vous entendez une respiration derrière vous... Oh non. On dirait qu'il y a un monstre sous ce lit.",
+        image: "../assets/image/mort-lit.jpg",
+        video: false,
+        sound: "../assets/audio/fail.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "begin",
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+    mortArmoire: {
+        titre: "Hors du Placard",
+        description: "Vous allez vous cacher dans l'armoire. Le fantôme vous a entendu ouvrir l'armoire. On dirait que vous aller rester dans cette armoire, mais sans votre vie.",
+        image: "../assets/image/mort-armoire.jpg",
+        video: false,
+        sound: "../assets/audio/fail.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "begin",
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+    // morts chapitre 4 dans la cuisine
+    mortCuisineRien: {
+        titre: "Trouvé !",
+        description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
+        image: false,
+        video: "../assets/video/mort-cuisine.mp4",
+        sound: "../assets/audio/fail.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "begin",
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+    mortCuisineCouteau: {
+        titre: "Mauvais Couteau",
+        description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
+        image: false,
+        video: "../assets/video/mort-cuisine.mp4",
+        sound: "../assets/audio/fail.mp3",
+        buttons: [{
+            titre: "Recommencer",
+            destination: "begin",
+            sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+    // mort chapitre 4 dans le garage
+    mortVoiture: {
+        titre: "Bon Déjeuné !",
+        description: "Vous allez sous la voiture dans le garage. Après un bout de temps, la voiture démarre... et se met à rouler. Vous devenez une crêpe couverte de sang. Kachow !",
+        image: "../assets/image/mort-voiture.jpg",
+        video: false,
+        sound: "../assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
@@ -323,90 +499,24 @@ function goToChapter(chapterKey) {
 
         // Fin Twist
         if (pizza === true) {
-            chaptersObj.cachette = {
-                titre: `Cache-Cache`,
-                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "../assets/image/cachette.jpg",
-                video: false,
-                sound: "../assets/audio/trouble.mp3",
-                buttons: [{
-                        titre: "Chambre",
-                        destination: "finPizza",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans la chambre"
-                    },
-                    {
-                        titre: "Garage",
-                        destination: "finPizza",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans le garage"
-                    },
-                    {
-                        titre: "Cuisine",
-                        destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la cuisine"
-                    }
-                ]
-            }
+            chaptersObj.armoire.buttons[0].destination = "finPizza";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.etagere.buttons[0].destination = "finPizza";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.aspirateur.buttons[0].destination = "finPizza";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
         }
 
         if (solo === true) {
-            chaptersObj.cachette = {
-                titre: `Cache-Cache`,
-                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "../assets/image/cachette.jpg",
-                video: false,
-                sound: "../assets/audio/trouble.mp3",
-                buttons: [{
-                        titre: "Chambre",
-                        destination: "finSolo",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans la chambre"
-                    },
-                    {
-                        titre: "Garage",
-                        destination: "finSolo",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans le garage"
-                    },
-                    {
-                        titre: "Cuisine",
-                        destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la cuisine"
-                    }
-                ]
-            }
+            chaptersObj.armoire.buttons[0].destination = "finSolo";
+            chaptersObj.etagere.buttons[0].destination = "finSolo";
+            chaptersObj.aspirateur.buttons[0].destination = "finSolo";
         }
 
         if (mysteryInc === true) {
-            chaptersObj.cachette = {
-                titre: `Cache-Cache`,
-                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "../assets/image/cachette.jpg",
-                video: false,
-                sound: "../assets/audio/trouble.mp3",
-                buttons: [{
-                        titre: "Chambre",
-                        destination: "finPro",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la chambre"
-                    },
-                    {
-                        titre: "Garage",
-                        destination: "finPro",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans le garage"
-                    },
-                    {
-                        titre: "Cuisine",
-                        destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la cuisine"
-                    }
-                ]
-            }
+            chaptersObj.armoire.buttons[0].destination = "finPro";
+            chaptersObj.etagere.buttons[0].destination = "finPro";
+            chaptersObj.aspirateur.buttons[0].destination = "finPro";
         }
 
         // Rappel du chapitre
@@ -446,92 +556,26 @@ if (localStorage.getItem("progress")) {
     pizza = pizzaTwist;
     solo = soloTwist;
     mysteryInc = proTwist;
-    if (currentProgress === "cachette") {
+    if (currentProgress === "armoire" || currentProgress === "etagere" || currentProgress === "aspirateur") {
         if (pizza === "true") {
-            chaptersObj.cachette = {
-                titre: `Cache-Cache`,
-                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "../assets/image/cachette.jpg",
-                video: false,
-                sound: "../assets/audio/trouble.mp3",
-                buttons: [{
-                        titre: "Chambre",
-                        destination: "finPizza",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans la chambre"
-                    },
-                    {
-                        titre: "Garage",
-                        destination: "finPizza",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans le garage"
-                    },
-                    {
-                        titre: "Cuisine",
-                        destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la cuisine"
-                    }
-                ]
-            }
+            chaptersObj.armoire.buttons[0].destination = "finPizza";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.etagere.buttons[0].destination = "finPizza";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.aspirateur.buttons[0].destination = "finPizza";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
         }
 
         if (solo === "true") {
-            chaptersObj.cachette = {
-                titre: `Cache-Cache`,
-                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "../assets/image/cachette.jpg",
-                video: false,
-                sound: "../assets/audio/trouble.mp3",
-                buttons: [{
-                        titre: "Chambre",
-                        destination: "finSolo",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans la chambre"
-                    },
-                    {
-                        titre: "Garage",
-                        destination: "finSolo",
-                        sound: "../assets/audio/goodChoice.mp3",
-                        hover: "Aller se cacher dans le garage"
-                    },
-                    {
-                        titre: "Cuisine",
-                        destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la cuisine"
-                    }
-                ]
-            }
+            chaptersObj.armoire.buttons[0].destination = "finSolo";
+            chaptersObj.etagere.buttons[0].destination = "finSolo";
+            chaptersObj.aspirateur.buttons[0].destination = "finSolo";
         }
 
         if (mysteryInc === "true") {
-            chaptersObj.cachette = {
-                titre: `Cache-Cache`,
-                description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-                image: "../assets/image/cachette.jpg",
-                video: false,
-                sound: "../assets/audio/trouble.mp3",
-                buttons: [{
-                        titre: "Chambre",
-                        destination: "finPro",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la chambre"
-                    },
-                    {
-                        titre: "Garage",
-                        destination: "finPro",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans le garage"
-                    },
-                    {
-                        titre: "Cuisine",
-                        destination: "mortCuisine",
-                        sound: "../assets/audio/badChoice.mp3",
-                        hover: "Aller se cacher dans la cuisine"
-                    }
-                ]
-            }
+            chaptersObj.armoire.buttons[0].destination = "finPro";
+            chaptersObj.etagere.buttons[0].destination = "finPro";
+            chaptersObj.aspirateur.buttons[0].destination = "finPro";
         }
     }
     goToChapter(currentProgress);
@@ -542,4 +586,8 @@ if (localStorage.getItem("progress")) {
 reset.addEventListener("click", function () {
     localStorage.clear();
     goToChapter("begin");
-})
+});
+
+btnLight.addEventListener("click", function (){
+    body.classList.toggle("light");
+});
