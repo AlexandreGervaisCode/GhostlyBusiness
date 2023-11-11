@@ -145,7 +145,7 @@ const chaptersObj = {
         description: `Vous êtes maintenant caché derrière une armoire, avec quelques autres cachettes à proximité, dans une chambre. Où se cacher ?`,
         image: false,
         video: "../assets/video/cachette-chambre.mp4",
-        sound: "../assets/audio/heartbeat.mp3",
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Sous le lit",
                 destination: "mortLit",
@@ -153,7 +153,7 @@ const chaptersObj = {
                 hover: "Aller se cacher sous le lit"
             },
             {
-                titre: "Dans l'armoire",
+                titre: "Armoire",
                 destination: "mortArmoire",
                 sound: "../assets/audio/badChoice.mp3",
                 hover: "Se cacher dans l'armoire"
@@ -172,7 +172,7 @@ const chaptersObj = {
         description: `Vous êtes maintenant caché derrière un comptoir, avec divers outils sur le comptoir, dans la cuisine. Quelle est votre prochaine action ?`,
         image: false,
         video: "../assets/video/cachette-cuisine.mp4",
-        sound: "../assets/audio/heartbeat.mp3",
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Attendre",
                 destination: "mortCuisineRien",
@@ -181,7 +181,7 @@ const chaptersObj = {
             },
             {
                 titre: "Couteau",
-                destination: "mortCuisineCouteau",
+                destination: "mortCouteau",
                 sound: "../assets/audio/badChoice.mp3",
                 hover: "Aller se cacher dans le garage"
             }
@@ -193,7 +193,7 @@ const chaptersObj = {
         description: `Vous êtes maintenant caché derrière une étagère, entouré de différents objets, dans le garage. Quelle est votre prochaine action ?`,
         image: false,
         video: "../assets/video/cachette-garage.mp4",
-        sound: "../assets/audio/heartbeat.mp3",
+        sound: "../assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Attendre",
                 destination: "etagere",
@@ -218,7 +218,7 @@ const chaptersObj = {
     // Chapitre 5
     armoire: {
         titre: "Introuvable",
-        description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
+        description: "Vous décider de rester derrière l'armoire. Le fantôme ne vous trouve pas.",
         image: "../assets/image/armoire.jpg",
         video: false,
         sound: "../assets/audio/heartbeat.mp3",
@@ -232,7 +232,7 @@ const chaptersObj = {
 
     etagere: {
         titre: "Introuvable",
-        description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
+        description: "Vous décider de rester derrière l'étagère. Le fantôme ne vous trouve pas.",
         image: "../assets/image/etagere.jpg",
         video: false,
         sound: "../assets/audio/heartbeat.mp3",
@@ -246,7 +246,7 @@ const chaptersObj = {
 
     aspirateur: {
         titre: "Introuvable",
-        description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
+        description: "Vous prenez le vieil aspirateur dans le coin de la salle. Vous essayez de faire fonctionner l'aspirateur pour attraper ce fantôme à la Luigi. L'aspirateur ne fonctionne juste plus. Vous décidez de ne plus faire de bruit et de rester dans le coin. Le fantôme ne vous trouve pas.",
         image: "../assets/image/aspirateur.jpg",
         video: false,
         sound: "../assets/audio/heartbeat.mp3",
@@ -404,11 +404,11 @@ const chaptersObj = {
         }]
     },
 
-    mortCuisineCouteau: {
+    mortCouteau: {
         titre: "Mauvais Couteau",
-        description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
-        image: false,
-        video: "../assets/video/mort-cuisine.mp4",
+        description: "Vous prenez un couteau sur le comptoir. Le fantôme vous voit et s'approche. Vous tentez de le poignarder. Attendez une seconde, vous avez prit un couteau à BEURRE quand il y avait un couteau pointu DIRECTEMENT à côté !? Vous êtes étranglé par le fantôme. Vous le méritez probablement.",
+        image: "../assets/image/mort-couteau.jpg",
+        video: false,
         sound: "../assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
@@ -446,6 +446,8 @@ const btnSuccess = document.querySelector("#success");
 const bgMusic = document.createElement("audio");
 const soundEffect = document.createElement("audio");
 bgMusic.loop = true;
+const heartbeat = new Audio("../assets/audio/heartbeat.mp3");
+heartbeat.loop = true;
 // les Twists
 let pizza = false;
 let solo = false;
@@ -456,9 +458,19 @@ function goToChapter(chapterKey) {
         const chapterInput = chaptersObj[chapterKey];
         chapterTitle.innerHTML = chapterInput.titre;
         chapterDescription.innerHTML = chapterInput.description;
-        bgMusic.src = chapterInput.sound;
-        bgMusic.play();
+        // Pour ne pas répéter le début de musique en changeant de chapitre
+        if ((chapterKey === "cachette" || chapterKey === "armoire" || chapterKey === "cuisine" || chapterKey === "garage") && bgMusic.paused === false){
+            bgMusic.play();
+        } else {
+            bgMusic.src = chapterInput.sound;
+            bgMusic.play();
+        }
 
+        if (chapterKey === "armoire" || chapterKey === "cuisine" || chapterKey === "garage"){
+            heartbeat.play();
+        } else {
+            heartbeat.pause();
+        }
         // Toggle Image/Video
         if (chapterInput.image === false) {
             chapterImg.classList.add("hidden");
@@ -583,11 +595,36 @@ if (localStorage.getItem("progress")) {
     goToChapter("begin");
 }
 
+// Bouton Reset
 reset.addEventListener("click", function () {
     localStorage.clear();
     goToChapter("begin");
 });
 
+// Bouton Light Mode
 btnLight.addEventListener("click", function (){
     body.classList.toggle("light");
 });
+
+chapterVideo.addEventListener("click", function (){
+    if (chapterVideo.paused || bgMusic.paused){
+        chapterVideo.currentTime = 0;
+        chapterVideo.play();
+        bgMusic.play();
+    }
+})
+
+const allAchievement = document.querySelectorAll(".achievement");
+let ach0 = false;
+let ach1 = false;
+let ach2 = false;
+let ach3 = false;
+let ach4 = false;
+let ach5 = false;
+let ach6 = false;
+let ach7 = false;
+let ach8 = false;
+let ach9 = false;
+let ach10 = false;
+let ach11 = false;
+const achievementTab = [ach0,ach1,ach2,ach3,ach4,ach5,ach6,ach7,ach8,ach9,ach10,ach11];
