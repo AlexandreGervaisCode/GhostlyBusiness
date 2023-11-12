@@ -157,6 +157,18 @@ body {
     font-size: 14px;
 }
 
+.hidden.achievement-container{
+    display: none;
+}
+
+.achievement-container.hidden > *{
+    display: none;
+}
+
+.achievement-container.hidden .achievement-list{
+    display: none;
+}
+
 .locked{
     filter: grayscale(100%);
 }

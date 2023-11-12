@@ -445,6 +445,7 @@ const btnLight = document.querySelector("#light");
 const btnSuccess = document.querySelector("#success");
 const bgMusic = document.createElement("audio");
 const soundEffect = document.createElement("audio");
+const containerAchievement = document.querySelector(".achievement-container");
 bgMusic.loop = true;
 const heartbeat = new Audio("../assets/audio/heartbeat.mp3");
 heartbeat.loop = true;
@@ -453,6 +454,23 @@ let pizza = false;
 let solo = false;
 let mysteryInc = false;
 
+// Achievement stuff
+const allAchievement = document.querySelectorAll(".achievement");
+let ach0 = false;
+let ach1 = false;
+let ach2 = false;
+let ach3 = false;
+let ach4 = false;
+let ach5 = false;
+let ach6 = false;
+let ach7 = false;
+let ach8 = false;
+let ach9 = false;
+let ach10 = false;
+let ach11 = false;
+const achievementTab = [ach0,ach1,ach2,ach3,ach4,ach5,ach6,ach7,ach8,ach9,ach10,ach11];
+
+// goToChapter (It does everything basically)
 function goToChapter(chapterKey) {
     if (chaptersObj[chapterKey]) {
         const chapterInput = chaptersObj[chapterKey];
@@ -536,6 +554,7 @@ function goToChapter(chapterKey) {
         localStorage.setItem("twistPizza", pizza);
         localStorage.setItem("twistSolo", solo);
         localStorage.setItem("twistPro", mysteryInc);
+        localStorage.setItem("allSuccess", achievementTab);
 
         // Boucle Boutons
         const boutons = document.querySelector('#button-container');
@@ -565,6 +584,7 @@ if (localStorage.getItem("progress")) {
     let pizzaTwist = localStorage.getItem("twistPizza");
     let soloTwist = localStorage.getItem("twistSolo");
     let proTwist = localStorage.getItem("twistPro");
+    let getSuccess = localStorage.getItem("allSuccess");
     pizza = pizzaTwist;
     solo = soloTwist;
     mysteryInc = proTwist;
@@ -606,25 +626,28 @@ btnLight.addEventListener("click", function (){
     body.classList.toggle("light");
 });
 
+btnSuccess.addEventListener("click", function(){
+    containerAchievement.classList.toggle("hidden");
+})
+
+// Si l'audio ou la vidéo ne jouent pas
 chapterVideo.addEventListener("click", function (){
     if (chapterVideo.paused || bgMusic.paused){
         chapterVideo.currentTime = 0;
         chapterVideo.play();
         bgMusic.play();
     }
-})
+});
 
-const allAchievement = document.querySelectorAll(".achievement");
-let ach0 = false;
-let ach1 = false;
-let ach2 = false;
-let ach3 = false;
-let ach4 = false;
-let ach5 = false;
-let ach6 = false;
-let ach7 = false;
-let ach8 = false;
-let ach9 = false;
-let ach10 = false;
-let ach11 = false;
-const achievementTab = [ach0,ach1,ach2,ach3,ach4,ach5,ach6,ach7,ach8,ach9,ach10,ach11];
+chapterImg.addEventListener("click", function(){
+    if (bgMusic.paused){
+        bgMusic.play();
+    }
+});
+
+// Remove locked from obtained Achievements
+for (let i = 0; i < achievementTab.length-1; i++){
+    if (achievementTab[i] === true){
+        allAchievement[i].classList.remove("locked");
+    }
+}
