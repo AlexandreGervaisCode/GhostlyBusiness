@@ -650,4 +650,4 @@ for (let i = 0; i < achievementTab.length-1; i++){
     if (achievementTab[i] === true){
         allAchievement[i].classList.remove("locked");
     }
-}
+};
