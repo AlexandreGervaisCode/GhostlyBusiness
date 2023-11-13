@@ -456,19 +456,80 @@ let mysteryInc = false;
 
 // Achievement stuff
 const allAchievement = document.querySelectorAll(".achievement");
-let ach0 = false;
-let ach1 = false;
-let ach2 = false;
-let ach3 = false;
-let ach4 = false;
-let ach5 = false;
-let ach6 = false;
-let ach7 = false;
-let ach8 = false;
-let ach9 = false;
-let ach10 = false;
-let ach11 = false;
-const achievementTab = [ach0,ach1,ach2,ach3,ach4,ach5,ach6,ach7,ach8,ach9,ach10,ach11];
+const achievementObj = {
+    ach0: {
+        titre: `Escargot en Mission`,
+        description: `Est-ce que le fantôme vous as tué dans la vraie vie`,
+        unlock: false,
+        achHtml: allAchievement[0],
+    },
+    ach1: {
+        titre: `Joyeux Noël`,
+        description: `Un petit cadeau.`,
+        unlock: false,
+        achHtml: allAchievement[1],
+    },
+    ach2: {
+        titre: `Meddling Kids`,
+        description: `And I would have gotten away with it too, if it weren't for you meddling kids!`,
+        unlock: false,
+        achHtml: allAchievement[2],
+    },
+    ach3: {
+        titre: `...Quoi?`,
+        description: `Pourquoi que vous avez rien fait quand vous êtes face à un danger?`,
+        unlock: false,
+        achHtml: allAchievement[3],
+    },
+    ach4: {
+        titre: `Nouveaux Débuts`,
+        description: `Un nouveau début`,
+        unlock: false,
+        achHtml: allAchievement[4],
+    },
+    ach5: {
+        titre: `Grand Retour`,
+        description: `Votre retour attendu sur Ghostly Business est arrivé!`,
+        unlock: false,
+        achHtml: allAchievement[5],
+    },
+    ach6: {
+        titre: `Bon Appétit`,
+        description: `Apprécié bien cette pizza, car c'est votre seule récompense.`,
+        unlock: false,
+        achHtml: allAchievement[6],
+    },
+    ach7: {
+        titre: `Vraie Torture`,
+        description: `Pourquoi que vous avez choisi de vous aveuglir?`,
+        unlock: false,
+        achHtml: allAchievement[7],
+    },
+    ach8: {
+        titre: `Record Mondial`,
+        description: `Vous avez obtenu le record mondial dans la catégorie any% !`,
+        unlock: false,
+        achHtml: allAchievement[8],
+    },
+    ach9: {
+        titre: `Vraie Fin`,
+        description: `La fin ultimate.`,
+        unlock: false,
+        achHtml: allAchievement[9],
+    },
+    ach10: {
+        titre: `Sublime Soliditude`,
+        description: `Des fois, faire face à des défis seul est la meilleure manière de surmonter ses problèmes.`,
+        unlock: false,
+        achHtml: allAchievement[10],
+    },
+    ach11: {
+        titre: `The Completionist`,
+        description: `Vous avez 100% Ghostly Business. Wow, juste wow. Vous n'avez vraiment rien de mieux à faire.`,
+        unlock: false,
+        achHtml: allAchievement[11],
+    }
+};
 
 // goToChapter (It does everything basically)
 function goToChapter(chapterKey) {

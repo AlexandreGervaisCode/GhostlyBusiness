@@ -147,6 +147,11 @@ body {
     flex-wrap: wrap;
 }
 
+.iconAchievement{
+    width: 75px;
+    height: 75px;
+}
+
 .achievement{
     flex-basis: 25%;
 }
