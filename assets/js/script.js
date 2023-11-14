@@ -958,16 +958,6 @@ achievementObj.gift.achHtml.addEventListener("click", function (){
     achievementObj.gift.unlock = true;
 });
 
-// "Record Mondial" Achievement
-setTimeout(() => {
-    if (achievementObj.badEnd.unlock === true || achievementObj.endGood.unlock === true || achievementObj.endOkay.unlock === true){
-        if (achievementObj.speedrun.unlock === false){
-            successAudio.play();
-        }
-        achievementObj.speedrun.unlock = true;
-    };
-}, 15000);
-
 // "The Completionnist" Achievement
 function checkCompletionnist(){
     if (achievementObj.afk.unlock === true && achievementObj.gift.unlock === true && achievementObj.badEnd.unlock === true && achievementObj.why.unlock === true && achievementObj.resetBegin.unlock === true && achievementObj.comeback.unlock === true && achievementObj.endOkay.unlock === true && achievementObj.blind.unlock === true && achievementObj.speedrun.unlock === true && achievementObj.endTrue.unlock === true && achievementObj.endGood.unlock === true){
