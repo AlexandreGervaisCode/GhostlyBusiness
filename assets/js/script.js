@@ -111,6 +111,34 @@ const chaptersObj = {
         ]
     },
 
+    // Chapitre 2, choix Tous
+    confrontationVraie: {
+        titre: `Face-à-Face`,
+        description: `Les meilleurs chasseurs de créatures paranormals et une bonne pizza vont arriver sous-peu, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
+        image: "../assets/image/confrontation.jpg",
+        video: false,
+        sound: "../assets/audio/trouble.mp3",
+        buttons: [{
+                titre: "Confusion",
+                destination: "mortDistraction",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "Rendre le fantôme confus"
+            },
+            {
+                titre: "Fuir",
+                destination: "cachette",
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Fuir du fantôme"
+            },
+            {
+                titre: "Rien",
+                destination: "mortRien",
+                sound: "../assets/audio/badChoice.mp3",
+                hover: "N'appuyez pas sur ce bouton"
+            }
+        ]
+    },
+
     // Chapitre 3
     cachette: {
         titre: `Cache-Cache`,
@@ -177,13 +205,13 @@ const chaptersObj = {
                 titre: "Attendre",
                 destination: "mortCuisineRien",
                 sound: "../assets/audio/badChoice.mp3",
-                hover: "Aller se cacher dans la chambre"
+                hover: "Ne pas bouger"
             },
             {
                 titre: "Couteau",
                 destination: "mortCouteau",
                 sound: "../assets/audio/badChoice.mp3",
-                hover: "Aller se cacher dans le garage"
+                hover: "Se armer d'un couteau"
             }
         ]
     },
@@ -237,7 +265,7 @@ const chaptersObj = {
         video: false,
         sound: "../assets/audio/heartbeat.mp3",
         buttons: [{
-            titre: "Recommencer",
+            titre: "Fin",
             destination: "compagnon",
             sound: "../assets/audio/goodChoice.mp3",
             hover: "Accèder à la fin de cette aventure"
@@ -251,7 +279,7 @@ const chaptersObj = {
         video: false,
         sound: "../assets/audio/heartbeat.mp3",
         buttons: [{
-            titre: "Recommencer",
+            titre: "Fin",
             destination: "compagnon",
             sound: "../assets/audio/goodChoice.mp3",
             hover: "Accèder à la fin de cette aventure"
@@ -294,7 +322,7 @@ const chaptersObj = {
         video: false,
         sound: "../assets/audio/okay_ending.mp3",
         buttons: [{
-            titre: "Recommencer",
+            titre: "Redébuter",
             destination: "begin",
             sound: "../assets/audio/goodChoice.mp3",
             hover: "Retourner au début"
@@ -309,7 +337,7 @@ const chaptersObj = {
         video: false,
         sound: "../assets/audio/good_ending.mp3",
         buttons: [{
-            titre: "Recommencer",
+            titre: "Redébuter",
             destination: "begin",
             sound: "../assets/audio/goodChoice.mp3",
             hover: "Retouner au début"
@@ -324,9 +352,39 @@ const chaptersObj = {
         video: false,
         sound: "../assets/audio/bad_ending.mp3",
         buttons: [{
-            titre: "Recommencer",
+            titre: "Redébuter",
             destination: "begin",
             sound: "../assets/audio/badChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+     // Chapitre finale, Vraie fin, si chapitre 2 choix Tous
+     finVraie: {
+        titre: "Vraie Fin",
+        description: "Vous attendez pour attaquer le fantôme depuis derrière. Pendant que le fantôme est à terre, les professionnels, Mystery Incorporated, arrivent sur la scène et arrête le fantôme. Le chef de Mystery Inc enlève le masque du fantôme, révèlant votre client. Votre client est arrété, vous êtes payé par la police pour votre arrêt. Votre pizza arrive et vous la savourez avec vos nouveaux amis de Mystery Inc.",
+        image: "../assets/image/end-scooby.jpg",
+        video: false,
+        sound: "../assets/audio/best-ending.mp3",
+        buttons: [{
+            titre: "Redébuter",
+            destination: "begin",
+            sound: "../assets/audio/goodChoice.mp3",
+            hover: "Retourner au début"
+        }]
+    },
+
+    // Fin si l'utilisateur à Light Mode d'activer quand le fantôme est visible
+    blindingLight: {
+        titre: "...Victoire ?",
+        description: "Vous avez tué le fantôme avec votre lumière intense, mais vous êtes probablement également aveugle. Pourquoi avez-vous activé le mode clair ? Peu importe votre raison, personne d'autre est capable de l'endurer, donc dites au revoir au mode clair.",
+        image: "../assets/image/end-light.jpg",
+        video: false,
+        sound: "../assets/audio/okay_ending.mp3",
+        buttons: [{
+            titre: "Redébuter",
+            destination: "begin",
+            sound: "../assets/audio/goodChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -447,89 +505,116 @@ const bgMusic = document.createElement("audio");
 const soundEffect = document.createElement("audio");
 const containerAchievement = document.querySelector(".achievement-container");
 bgMusic.loop = true;
+bgMusic.volume = 0.8;
+soundEffect.volume = 0.7;
 const heartbeat = new Audio("../assets/audio/heartbeat.mp3");
 heartbeat.loop = true;
 // les Twists
 let pizza = false;
 let solo = false;
 let mysteryInc = false;
+let vraieFin = false
 
 // Achievement stuff
 const allAchievement = document.querySelectorAll(".achievement");
+let achievementText = document.querySelectorAll(".textAchievement");
+const successAudio = new Audio("../assets/audio/success.mp3");
+successAudio.volume = 0.7;
 const achievementObj = {
-    ach0: {
+    afk: {
         titre: `Escargot en Mission`,
+        lockedText: `EM`,
         description: `Est-ce que le fantôme vous as tué dans la vraie vie`,
         unlock: false,
         achHtml: allAchievement[0],
     },
-    ach1: {
+    gift: {
         titre: `Joyeux Noël`,
+        lockedText: `JN`,
         description: `Un petit cadeau.`,
         unlock: false,
         achHtml: allAchievement[1],
     },
-    ach2: {
+    badEnd: {
         titre: `Meddling Kids`,
+        lockedText: `MD`,
         description: `And I would have gotten away with it too, if it weren't for you meddling kids!`,
         unlock: false,
         achHtml: allAchievement[2],
     },
-    ach3: {
+    why: {
         titre: `...Quoi?`,
+        lockedText: `???`,
         description: `Pourquoi que vous avez rien fait quand vous êtes face à un danger?`,
         unlock: false,
         achHtml: allAchievement[3],
     },
-    ach4: {
+    resetBegin: {
         titre: `Nouveaux Débuts`,
+        lockedText: `ND`,
         description: `Un nouveau début`,
         unlock: false,
         achHtml: allAchievement[4],
     },
-    ach5: {
+    comeback: {
         titre: `Grand Retour`,
+        lockedText: `GR`,
         description: `Votre retour attendu sur Ghostly Business est arrivé!`,
         unlock: false,
         achHtml: allAchievement[5],
     },
-    ach6: {
+    endOkay: {
         titre: `Bon Appétit`,
+        lockedText: `BA`,
         description: `Apprécié bien cette pizza, car c'est votre seule récompense.`,
         unlock: false,
         achHtml: allAchievement[6],
     },
-    ach7: {
-        titre: `Vraie Torture`,
+    blind: {
+        titre: `Lumière Aveuglante`,
+        lockedText: `LA`,
         description: `Pourquoi que vous avez choisi de vous aveuglir?`,
         unlock: false,
         achHtml: allAchievement[7],
     },
-    ach8: {
+    speedrun: {
         titre: `Record Mondial`,
+        lockedText: `RM`,
         description: `Vous avez obtenu le record mondial dans la catégorie any% !`,
         unlock: false,
         achHtml: allAchievement[8],
     },
-    ach9: {
+    endTrue: {
         titre: `Vraie Fin`,
+        lockedText: `VF`,
         description: `La fin ultimate.`,
         unlock: false,
         achHtml: allAchievement[9],
     },
-    ach10: {
+    endGood: {
         titre: `Sublime Soliditude`,
+        lockedText: `SS`,
         description: `Des fois, faire face à des défis seul est la meilleure manière de surmonter ses problèmes.`,
         unlock: false,
         achHtml: allAchievement[10],
     },
-    ach11: {
+    complete: {
         titre: `The Completionist`,
+        lockedText: `TC`,
         description: `Vous avez 100% Ghostly Business. Wow, juste wow. Vous n'avez vraiment rien de mieux à faire.`,
         unlock: false,
         achHtml: allAchievement[11],
     }
 };
+
+if (achievementObj.badEnd.unlock === true && achievementObj.endGood.unlock === true && achievementObj.endOkay.unlock === true){
+    chaptersObj.begin.buttons[3] = {
+        titre: "Tous",
+        destination: "confrontationVraie",
+        sound: "../assets/audio/goodChoice.mp3",
+        hover: "Appeler Domino's et des professionnels"
+    };
+}
 
 // goToChapter (It does everything basically)
 function goToChapter(chapterKey) {
@@ -540,6 +625,11 @@ function goToChapter(chapterKey) {
         // Pour ne pas répéter le début de musique en changeant de chapitre
         if ((chapterKey === "cachette" || chapterKey === "armoire" || chapterKey === "cuisine" || chapterKey === "garage") && bgMusic.paused === false){
             bgMusic.play();
+        } else if (chapterKey === "blindingLight"){
+            setTimeout(() => {
+                bgMusic.src = chapterInput.sound;
+                bgMusic.play();
+            }, 300);
         } else {
             bgMusic.src = chapterInput.sound;
             bgMusic.play();
@@ -568,54 +658,125 @@ function goToChapter(chapterKey) {
             pizza = false;
             solo = false;
             mysteryInc = false;
+            vraieFin = false;
         }
 
         if (chapterInput === chaptersObj.confrontationPizza) {
             pizza = true;
             solo = false;
             mysteryInc = false;
+            vraieFin = false;
         }
 
         if (chapterInput === chaptersObj.confrontationSolo) {
             pizza = false;
             solo = true;
             mysteryInc = false;
+            vraieFin = false;
         }
 
         if (chapterInput === chaptersObj.confrontationPro) {
             pizza = false;
             solo = false;
             mysteryInc = true;
+            vraieFin = false;
+        }
+
+        if (chapterInput === chaptersObj.confrontationVraie) {
+            pizza = false;
+            solo = false;
+            mysteryInc = false;
+            vraieFin = true;
         }
 
         // Fin Twist
         if (pizza === true) {
             chaptersObj.armoire.buttons[0].destination = "finPizza";
-            chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finPizza";
-            chaptersObj.etagere.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.aspirateur.buttons[0].destination = "finPizza";
-            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
 
         if (solo === true) {
             chaptersObj.armoire.buttons[0].destination = "finSolo";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finSolo";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.aspirateur.buttons[0].destination = "finSolo";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
 
         if (mysteryInc === true) {
             chaptersObj.armoire.buttons[0].destination = "finPro";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finPro";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/badChoice.mp3";
             chaptersObj.aspirateur.buttons[0].destination = "finPro";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
         }
 
-        // Rappel du chapitre
+        if (vraieFin === true) {
+            chaptersObj.armoire.buttons[0].destination = "finVraie";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
+            chaptersObj.etagere.buttons[0].destination = "finVraie";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/goodChoice.mp3";
+            chaptersObj.aspirateur.buttons[0].destination = "finVraie";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
+        }
+
+        // Fin secrète
+        if ((chapterKey === "mortDistraction" || chapterKey === "mortRien" || chapterKey === "mortArmoire" || chapterKey === "mortCouteau" || chapterKey === "mortCuisineRien" || chapterKey === "finSolo") && body.classList.contains("light")){
+            goToChapter("blindingLight");
+            if (achievementObj.blind.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.blind.unlock = true;
+            body.classList.remove("light");
+            btnLight.classList.add("hidden");
+        };
+
+        // Achievements des différentes fins
+        if (chapterInput === chaptersObj.finPizza){
+            if (achievementObj.endOkay.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.endOkay.unlock = true;
+        };
+        if (chapterInput === chaptersObj.finSolo){
+            if (achievementObj.endGood.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.endGood.unlock = true;
+        };
+        if (chapterInput === chaptersObj.finPro){
+            if (achievementObj.badEnd.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.badEnd.unlock = true;
+        };
+        if (chapterInput === chaptersObj.finVraie){
+            if (achievementObj.endTrue.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.endTrue.unlock = true;
+        };
+
+        // Achievement ...Quoi?
+        if (chapterInput === chaptersObj.mortRien){
+            if (achievementObj.why.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.why.unlock = true;
+        };
+
+        // Rappel des éléments
         localStorage.setItem("progress", chapterKey);
         localStorage.setItem("twistPizza", pizza);
         localStorage.setItem("twistSolo", solo);
         localStorage.setItem("twistPro", mysteryInc);
-        localStorage.setItem("allSuccess", achievementTab);
+        localStorage.setItem("twistVraie", vraieFin);
 
         // Boucle Boutons
         const boutons = document.querySelector('#button-container');
@@ -628,6 +789,13 @@ function goToChapter(chapterKey) {
             nouveauBtn.setAttribute("class", "choice");
             nouveauBtn.textContent = chapterInput.buttons[i].titre;
             nouveauBtn.title = chapterInput.buttons[i].hover;
+            // achievement AFK
+            nouveauBtn.addEventListener("animationend", function (){
+                if (achievementObj.afk.unlock === false){
+                    successAudio.play();
+                }
+                achievementObj.afk.unlock = true;
+            })
             nouveauBtn.addEventListener('click', function () {
                 soundEffect.src = chapterInput.buttons[i].sound;
                 goToChapter(chapterInput.buttons[i].destination);
@@ -640,35 +808,87 @@ function goToChapter(chapterKey) {
     }
 }
 
+// check Achievements state if unlocked
+function checkAch(){
+    let i = 0;
+    for (let ach in achievementObj) {
+        localStorage.setItem("ach"+i, achievementObj[ach].unlock);
+        if (achievementObj[ach].unlock === true){
+            achievementObj[ach].achHtml.classList.remove("locked");
+            achievementText[i].textContent = achievementObj[ach].titre;
+            achievementObj[ach].achHtml.ariaLabel = achievementObj[ach].description;
+        } else {
+            achievementObj[ach].achHtml.classList.add("locked");
+            achievementText[i].textContent = achievementObj[ach].lockedText;
+            achievementObj[ach].achHtml.ariaLabel = false;
+        }
+        i++;
+    };
+}
+const checking = setInterval(checkAch, 1000);
+
+// If achievement linked to light mode is unlocked, remove light mode
+
 if (localStorage.getItem("progress")) {
     let currentProgress = localStorage.getItem("progress");
     let pizzaTwist = localStorage.getItem("twistPizza");
     let soloTwist = localStorage.getItem("twistSolo");
     let proTwist = localStorage.getItem("twistPro");
-    let getSuccess = localStorage.getItem("allSuccess");
+    let trueTwist = localStorage.getItem("twistVraie");
+    // Remove locked from obtained Achievements in localStorage
+    let i = 0;
+    for (let ach in achievementObj) {
+        let getAch = localStorage.getItem("ach"+i);
+        if (getAch === "true"){
+            achievementObj[ach].unlock = true;
+        }
+        i++;
+    };
+    // Comeback achievement
+    if (achievementObj.comeback.unlock === false){
+        successAudio.play();
+    }
+    achievementObj.comeback.unlock = true;
+
     pizza = pizzaTwist;
     solo = soloTwist;
     mysteryInc = proTwist;
+    vraieFin = trueTwist
     if (currentProgress === "armoire" || currentProgress === "etagere" || currentProgress === "aspirateur") {
         if (pizza === "true") {
             chaptersObj.armoire.buttons[0].destination = "finPizza";
-            chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finPizza";
-            chaptersObj.etagere.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.aspirateur.buttons[0].destination = "finPizza";
-            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
 
         if (solo === "true") {
             chaptersObj.armoire.buttons[0].destination = "finSolo";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finSolo";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.aspirateur.buttons[0].destination = "finSolo";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
 
         if (mysteryInc === "true") {
             chaptersObj.armoire.buttons[0].destination = "finPro";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finPro";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/badChoice.mp3";
             chaptersObj.aspirateur.buttons[0].destination = "finPro";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
+        }
+
+        if (vraieFin === "true") {
+            chaptersObj.armoire.buttons[0].destination = "finVraie";
+            chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
+            chaptersObj.etagere.buttons[0].destination = "finVraie";
+            chaptersObj.etagere.buttons[0].sound = "../assets/audio/goodChoice.mp3";
+            chaptersObj.aspirateur.buttons[0].destination = "finVraie";
+            chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
     }
     goToChapter(currentProgress);
@@ -679,7 +899,15 @@ if (localStorage.getItem("progress")) {
 // Bouton Reset
 reset.addEventListener("click", function () {
     localStorage.clear();
+    for (let ach in achievementObj){
+        achievementObj[ach].unlock = false;
+    }
     goToChapter("begin");
+    btnLight.classList.remove("hidden");
+    if (achievementObj.resetBegin.unlock === false){
+        successAudio.play();
+    }
+    achievementObj.resetBegin.unlock = true;
 });
 
 // Bouton Light Mode
@@ -689,7 +917,12 @@ btnLight.addEventListener("click", function (){
 
 btnSuccess.addEventListener("click", function(){
     containerAchievement.classList.toggle("hidden");
-})
+});
+
+if (achievementObj.blind.unlock === true){
+    btnLight.classList.add("hidden");
+    body.classList.remove("light");
+}
 
 // Si l'audio ou la vidéo ne jouent pas
 chapterVideo.addEventListener("click", function (){
@@ -706,9 +939,10 @@ chapterImg.addEventListener("click", function(){
     }
 });
 
-// Remove locked from obtained Achievements
-for (let i = 0; i < achievementTab.length-1; i++){
-    if (achievementTab[i] === true){
-        allAchievement[i].classList.remove("locked");
+// "Joyeux Noel" Achievement
+achievementObj.gift.achHtml.addEventListener("click", function (){
+    if (achievementObj.gift.unlock === false){
+        successAudio.play();
     }
-};
+    achievementObj.gift.unlock = true;
+})
