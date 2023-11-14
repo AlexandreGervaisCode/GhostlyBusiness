@@ -5,7 +5,7 @@
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="49" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#18141d;" parent="1" vertex="1">
-                    <mxGeometry x="-40" y="-10" width="890" height="1350" as="geometry"/>
+                    <mxGeometry x="-140" y="10" width="1120" height="1350" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" parent="1" source="5" target="6" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -13,9 +13,13 @@
                 <mxCell id="5" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Appel d'un client qui souhaite dégager un fantôme de sa maison&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
                     <mxGeometry x="365" y="20" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="&lt;font style=&quot;background-color: rgb(24, 20, 29);&quot; color=&quot;#ffffff&quot;&gt;Personne&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" parent="1" source="6" target="9" edge="1">
-                    <mxGeometry relative="1" as="geometry">
+                <mxCell id="11" value="&lt;font style=&quot;background-color: rgb(24, 20, 29);&quot; color=&quot;#ffffff&quot;&gt;Personne&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="9" edge="1">
+                    <mxGeometry x="0.2172" relative="1" as="geometry">
                         <mxPoint as="offset"/>
+                        <Array as="points">
+                            <mxPoint x="340" y="240"/>
+                            <mxPoint x="340" y="300"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="20" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;font style=&quot;background-color: rgb(24, 20, 29);&quot; color=&quot;#ffffff&quot;&gt;D'autres&lt;br&gt;Professionnels&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="edgeStyle=none;rounded=1;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;strokeColor=#FFFFFF;" parent="1" source="6" target="9" edge="1">
@@ -32,6 +36,15 @@
                         <Array as="points">
                             <mxPoint x="285" y="190"/>
                             <mxPoint x="285" y="340"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;Tous (Apparait&amp;nbsp;&lt;br&gt;autres fins fait)&lt;br&gt;&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="6" target="9">
+                    <mxGeometry x="0.2598" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="510" y="240"/>
+                            <mxPoint x="510" y="290"/>
                         </Array>
                         <mxPoint as="offset"/>
                     </mxGeometry>
@@ -66,85 +79,199 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="76" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="23" target="62">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="880" y="490"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="77" value="Rien&lt;br&gt;et&lt;br&gt;Confus" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="76">
+                    <mxGeometry x="0.3033" relative="1" as="geometry">
+                        <mxPoint x="1" y="-245" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="23" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Vous tombez &lt;br&gt;face-à-face avec le fantôme&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=8;rounded=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" parent="1" vertex="1">
                     <mxGeometry x="365" y="430" width="120" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 8px; background-color: rgb(24, 20, 29);&quot;&gt;Garage&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;strokeColor=#FFFFFF;" parent="1" source="29" target="30" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="32" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 8px; background-color: rgb(24, 20, 29);&quot;&gt;Chambre&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;strokeColor=#FFFFFF;" parent="1" source="29" target="30" edge="1">
+                <mxCell id="31" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 8px; background-color: rgb(24, 20, 29);&quot;&gt;Garage&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;strokeColor=#FFFFFF;" parent="1" source="29" target="58" edge="1">
                     <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425" y="950" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 8px; background-color: rgb(24, 20, 29);&quot;&gt;Chambre&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;strokeColor=#FFFFFF;" parent="1" source="29" target="57" edge="1">
+                    <mxGeometry x="0.3191" relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="270" y="830"/>
-                            <mxPoint x="270" y="900"/>
-                            <mxPoint x="270" y="980"/>
+                            <mxPoint x="250" y="830"/>
                         </Array>
                         <mxPoint as="offset"/>
+                        <mxPoint x="250" y="950" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="29" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Il y a 3&lt;br&gt;salles proche.&lt;br&gt;Laquelle aller se&lt;br&gt;cacher dedans ?&lt;br&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=8;rounded=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" parent="1" vertex="1">
                     <mxGeometry x="365" y="770" width="120" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 8px; background-color: rgb(24, 20, 29);&quot;&gt;Cuisine&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" parent="1" source="29" target="5" edge="1">
-                    <mxGeometry relative="1" as="geometry">
+                <mxCell id="33" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 8px; background-color: rgb(24, 20, 29);&quot;&gt;Cuisine&lt;/font&gt;" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" parent="1" source="29" target="59" edge="1">
+                    <mxGeometry x="0.3469" relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="730" y="830"/>
-                            <mxPoint x="730" y="50"/>
+                            <mxPoint x="610" y="830"/>
+                            <mxPoint x="610" y="840"/>
                         </Array>
+                        <mxPoint x="610" y="950" as="targetPoint"/>
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="35" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" parent="1" source="30" target="34" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="35" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="58" target="34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425" y="1010" as="sourcePoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="30" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Vous avez réussi&lt;br&gt;à vous cacher&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
-                    <mxGeometry x="365" y="950" width="120" height="60" as="geometry"/>
+                <mxCell id="70" value="Aspirateur" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="35">
+                    <mxGeometry x="0.25" relative="1" as="geometry">
+                        <mxPoint y="-10" as="offset"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="39" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" parent="1" source="34" target="38" edge="1">
+                <mxCell id="39" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="34" target="38" edge="1">
                     <mxGeometry x="-0.3953" relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="135" y="1100"/>
+                            <mxPoint x="135" y="1140"/>
                         </Array>
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="40" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" parent="1" source="34" target="36" edge="1">
+                <mxCell id="40" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="34" target="36" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" parent="1" source="34" target="37" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="695" y="1100"/>
+                            <mxPoint x="695" y="1140"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;exitX=1;exitY=1;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="34" target="60">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="34" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Vous devez&lt;br&gt;vous occuper&lt;br&gt;du fantôme&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
-                    <mxGeometry x="365" y="1070" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="365" y="1110" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Si personne n'a été appelé.&lt;br&gt;&lt;br&gt;Vous attendez pour&lt;br&gt;attaquer le fantôme&lt;br&gt;depuis derrière. Il s'enfuit de la maison. Vous avez réussi !&lt;br&gt;Mais votre client a maintenant une bosse sur la tête...&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" parent="1" vertex="1">
-                    <mxGeometry x="343" y="1190" width="165" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="43" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FFFFFF;" parent="1" source="37" target="5" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="810" y="1245"/>
-                            <mxPoint x="810" y="50"/>
-                        </Array>
-                    </mxGeometry>
+                    <mxGeometry x="250" y="1230" width="165" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Si d'autres professionnels sont appelés.&lt;br&gt;&lt;br&gt;Mystery Inc arrive&lt;br&gt;et, croyant que vous&lt;br&gt;êtes le monstre, vous arrête.&lt;br&gt;SCOOBY-DOO-BY DOOO !&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="1190" width="170" height="110" as="geometry"/>
+                    <mxGeometry x="610" y="1230" width="170" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Si Domino a été appelé. &lt;br&gt;&lt;br&gt;Quelqu'un sonne&lt;br&gt;à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="1176.25" width="190" height="137.5" as="geometry"/>
+                    <mxGeometry x="40" y="1216.25" width="190" height="137.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="&lt;h1&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;1. Genre de l'aventure ?&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;font-size: 12px; font-weight: normal;&quot;&gt;Absurde&lt;/font&gt;&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;2. Est-ce que l'histoire est inspirée?&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Oui, de Phasmophobia (un jeu vidéo) et un peu de Scooby-Doo&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;3. Nom de l'histoire ?&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Ghostly Business&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;4. Pallette de couleur ?&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond du site : #191919&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond du contenu : #272727&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Police : #dedede&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond des boutons : #dedede&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond des boutons en hover : #ffffff&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Police des boutons : #191919&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Police des boutons en hover : #000000&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-24" y="2" width="224" height="368" as="geometry"/>
+                <mxCell id="44" value="&lt;h1&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;1. Genre de l'aventure ?&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;font-size: 12px; font-weight: normal;&quot;&gt;Absurde&lt;/font&gt;&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;2. Est-ce que l'histoire est inspirée?&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Oui, de Phasmophobia (un jeu vidéo) et de The Henry Stickmin Collection (un jeu vidéo)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;3. Nom de l'histoire ?&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Ghostly Business&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;4. Pallette de couleur ?&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond du site : #191919&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond du contenu : #272727&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Police : #dedede&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond des boutons : #dedede&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Fond des boutons en hover : #ffffff&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Police des boutons : #191919&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot;&gt;Police des boutons en hover : #000000&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-130" y="6" width="224" height="368" as="geometry"/>
                 </mxCell>
                 <mxCell id="52" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;strokeColor=#FFFFFF;" parent="1" source="51" target="29" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Vous fuyez du fantôme&lt;br&gt;et vous vous retrouvez dans un corridor. Le fantôme vous poursuit toujours.&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
                     <mxGeometry x="365.5" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" style="edgeStyle=none;html=1;fontSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="57" target="5">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="46.800048828125" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="110" y="1000"/>
+                            <mxPoint x="110" y="540"/>
+                            <mxPoint x="110" y="50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="64" value="Lit" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="63">
+                    <mxGeometry x="-0.2861" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=none;html=1;fontSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="57">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="50" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="160" y="1000"/>
+                            <mxPoint x="150" y="50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="Armoire" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="65">
+                    <mxGeometry x="-0.1755" y="-3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=8;strokeColor=#FFFFFF;" edge="1" parent="1" source="57" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="Pas bouger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="67">
+                    <mxGeometry x="0.212" relative="1" as="geometry">
+                        <mxPoint x="-12" y="-8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Où se cacher&lt;br&gt;dans la chambre ?&lt;br&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=8;rounded=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="940" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=none;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fontSize=8;exitX=1;exitY=1;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="58" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="Pas bouger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="69">
+                    <mxGeometry x="0.4" relative="1" as="geometry">
+                        <mxPoint y="-16" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Où se cacher&lt;br&gt;dans le garage ?&lt;br&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=8;rounded=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+                    <mxGeometry x="365.5" y="940" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;fillColor=#b0e3e6;" edge="1" parent="1" source="59" target="5">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="710" y="1000"/>
+                            <mxPoint x="710" y="50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="74" value="Rien" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="72">
+                    <mxGeometry x="-0.2076" y="2" relative="1" as="geometry">
+                        <mxPoint y="-39" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=none;html=1;fontSize=8;strokeColor=#FFFFFF;" edge="1" parent="1" source="59">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="490" y="50" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="760" y="1000"/>
+                            <mxPoint x="760" y="50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="75" value="Couteau" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="73">
+                    <mxGeometry x="-0.2009" y="-1" relative="1" as="geometry">
+                        <mxPoint y="-47" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="78" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="59" target="62">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="880" y="1000"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" value="Rien&lt;br&gt;et&lt;br&gt;Couteau" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" vertex="1" connectable="0" parent="78">
+                    <mxGeometry x="-0.3718" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Quoi faire&lt;br&gt;dans la cuisine ?&lt;br&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=8;rounded=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="940" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Si Tous à été sélectionné au chapire 1.&lt;br&gt;&lt;br&gt;Vous attaquez le fantôme et Mystery Inc arrive pour arrêter le fantôme. Vous célébrez votre victoire avec de la pizza.&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1230" width="165" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Si le mode clair est activé.&lt;br&gt;&lt;br&gt;La lumière surpuissante du mode clair tue le fantôme et vos yeux. Es-ce vraiment une victoire ?&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="1230" width="165" height="110" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
