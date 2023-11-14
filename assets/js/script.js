@@ -607,15 +607,6 @@ const achievementObj = {
     }
 };
 
-if (achievementObj.badEnd.unlock === true && achievementObj.endGood.unlock === true && achievementObj.endOkay.unlock === true){
-    chaptersObj.begin.buttons[3] = {
-        titre: "Tous",
-        destination: "confrontationVraie",
-        sound: "../assets/audio/goodChoice.mp3",
-        hover: "Appeler Domino's et des professionnels"
-    };
-}
-
 // goToChapter (It does everything basically)
 function goToChapter(chapterKey) {
     if (chaptersObj[chapterKey]) {
@@ -688,6 +679,16 @@ function goToChapter(chapterKey) {
             mysteryInc = false;
             vraieFin = true;
         }
+
+        // Début Vraie Fin
+        if (achievementObj.badEnd.unlock === true && achievementObj.endGood.unlock === true && achievementObj.endOkay.unlock === true){
+            chaptersObj.begin.buttons[3] = {
+                titre: "Tous",
+                destination: "confrontationVraie",
+                sound: "../assets/audio/goodChoice.mp3",
+                hover: "Appeler Domino's et des professionnels"
+            }
+        };
 
         // Fin Twist
         if (pizza === true) {
