@@ -363,8 +363,8 @@ const chaptersObj = {
      finVraie: {
         titre: "Vraie Fin",
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Pendant que le fantôme est à terre, les professionnels, Mystery Incorporated, arrivent sur la scène et arrête le fantôme. Le chef de Mystery Inc enlève le masque du fantôme, révèlant votre client. Votre client est arrété, vous êtes payé par la police pour votre arrêt. Votre pizza arrive et vous la savourez avec vos nouveaux amis de Mystery Inc.",
-        image: "../assets/image/end-scooby.jpg",
-        video: false,
+        image: false,
+        video: "../assets/video/best-ending.mp4",
         sound: "../assets/audio/best-ending.mp3",
         buttons: [{
             titre: "Redébuter",
@@ -374,7 +374,7 @@ const chaptersObj = {
         }]
     },
 
-    // Fin si l'utilisateur à Light Mode d'activer quand le fantôme est visible
+    // Fin si l'utilisateur a Light Mode d'activé quand le fantôme est visible
     blindingLight: {
         titre: "...Victoire ?",
         description: "Vous avez tué le fantôme avec votre lumière intense, mais vous êtes probablement également aveugle. Pourquoi avez-vous activé le mode clair ? Peu importe votre raison, personne d'autre est capable de l'endurer, donc dites au revoir au mode clair.",
@@ -519,7 +519,7 @@ let vraieFin = false
 const allAchievement = document.querySelectorAll(".achievement");
 let achievementText = document.querySelectorAll(".textAchievement");
 const successAudio = new Audio("../assets/audio/success.mp3");
-successAudio.volume = 0.7;
+successAudio.volume = 0.5;
 const achievementObj = {
     afk: {
         titre: `Escargot en Mission`,
@@ -900,6 +900,7 @@ if (localStorage.getItem("progress")) {
 // Bouton Reset
 reset.addEventListener("click", function () {
     localStorage.clear();
+    chaptersObj.begin.buttons.splice(3, 1);
     for (let ach in achievementObj){
         achievementObj[ach].unlock = false;
     }
@@ -909,6 +910,15 @@ reset.addEventListener("click", function () {
         successAudio.play();
     }
     achievementObj.resetBegin.unlock = true;
+    // "Record Mondial" Achievement
+    setTimeout(() => {
+        if (achievementObj.badEnd.unlock === true || achievementObj.endGood.unlock === true || achievementObj.endOkay.unlock === true){
+            if (achievementObj.speedrun.unlock === false){
+                successAudio.play();
+            }
+            achievementObj.speedrun.unlock = true;
+        };
+    }, 15000);
 });
 
 // Bouton Light Mode
@@ -940,10 +950,31 @@ chapterImg.addEventListener("click", function(){
     }
 });
 
-// "Joyeux Noel" Achievement
+// "Joyeux Noël" Achievement
 achievementObj.gift.achHtml.addEventListener("click", function (){
     if (achievementObj.gift.unlock === false){
         successAudio.play();
     }
     achievementObj.gift.unlock = true;
-})
+});
+
+// "Record Mondial" Achievement
+setTimeout(() => {
+    if (achievementObj.badEnd.unlock === true || achievementObj.endGood.unlock === true || achievementObj.endOkay.unlock === true){
+        if (achievementObj.speedrun.unlock === false){
+            successAudio.play();
+        }
+        achievementObj.speedrun.unlock = true;
+    };
+}, 15000);
+
+// "The Completionnist" Achievement
+function checkCompletionnist(){
+    if (achievementObj.afk.unlock === true && achievementObj.gift.unlock === true && achievementObj.badEnd.unlock === true && achievementObj.why.unlock === true && achievementObj.resetBegin.unlock === true && achievementObj.comeback.unlock === true && achievementObj.endOkay.unlock === true && achievementObj.blind.unlock === true && achievementObj.speedrun.unlock === true && achievementObj.endTrue.unlock === true && achievementObj.endGood.unlock === true){
+        if (achievementObj.complete.unlock === false){
+            successAudio.play();
+        }
+        achievementObj.complete.unlock = true;
+    }
+}
+let checkComplete = setInterval(checkCompletionnist, 3000);
