@@ -1,11 +1,3 @@
-:root {
-    --black: #191919;
-    --grey: #272727;
-    --white: #dedede;
-    --hover-black: #000000;
-    --hover-white: #ffffff;
-}
-
 @font-face {
     font-family: October-Crow;
     src: url(../fonts/OctoberCrow.ttf) format("truetype");
@@ -15,6 +7,23 @@
     font-family: comic-sans;
     src: url(../fonts/COMIC.TTF) format("truetype");
 }
+
+@keyframes afk {
+    0%, 100% {opacity: 100%;}
+    70% {opacity: 100%;}
+    90% {opacity: 0%;}
+    99% {opacity: 0%;}
+}
+
+:root {
+    --black: #191919;
+    --grey: #272727;
+    --white: #dedede;
+    --hover-black: #000000;
+    --hover-white: #ffffff;
+    --gameBG: #2f2f2f;
+}
+
 
 body {
     background-color: var(--black);
@@ -26,18 +35,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #Ghostly-Business {
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     border-radius: 5%;
+    background-color: var(--gameBG);
     border: solid 5px var(--grey);
-    width: 45%;
-    min-width: 300px;
+    width: 50%;
+    min-width: 410px;
     min-height: 300px;
     height: 60%;
     padding: 3%;
@@ -93,7 +105,7 @@ body {
 .choice {
     background-color: var(--white);
     color: var(--black);
-    border: none;
+    border: solid 5px var(--black);
     width: 10vw;
     min-width: 90px;
     height: 5vh;
@@ -102,6 +114,9 @@ body {
     font-size: 12px;
     font-family: comic-sans;
     border-radius: 5px;
+    animation-name: afk;
+    animation-duration: 600s;
+    animation-iteration-count: 1;
 }
 
 .choice:hover {
@@ -111,4 +126,100 @@ body {
 
 .hidden {
     display: none;
+}
+
+.achievement-container{
+    display: flex;
+    border-radius: 5%;
+    background-color: var(--gameBG);
+    border: solid 5px var(--grey);
+    width: 40%;
+    min-width: 405px;
+    min-height: 200px;
+    height: 60%;
+    padding: 3%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.achievement-text{
+    font-size: 20px;
+    font-family: comic-sans;
+}
+
+.achievement-list{
+    display: flex;
+    width: 100%;
+    min-width: 300px;
+    min-height: 300px;
+    height: 100%;
+    padding: 3%;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.iconAchievement{
+    width: 75px;
+    height: 75px;
+}
+
+.achievement{
+    flex-basis: 25%;
+}
+
+.textAchievement{
+    width: 75px;
+    font-family: comic-sans;
+    font-size: 14px;
+}
+
+.hidden.achievement-container{
+    display: none;
+}
+
+.achievement-container.hidden > *{
+    display: none;
+}
+
+.achievement-container.hidden .achievement-list{
+    display: none;
+}
+
+.locked{
+    filter: grayscale(100%);
+}
+
+header{
+    display: flex;
+    background-color: var(--hover-black);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2%;
+}
+
+.navigation{
+    font-size: 140%;
+    height: 5vw;
+    background-color: var(--gameBG);
+    color: var(--white);
+    border: none;
+    transition-duration: 0.5s;
+    margin: 0.3%;
+    flex-basis: 100%;
+}
+
+.navigation:hover{
+    color: var(--hover-white);
+    background-color: var(--black);
+}
+
+/*Light Mode*/
+.light {
+    --black: #fcfcfc;
+    --grey: #c0c0c0;
+    --white: #202020;
+    --hover-black: #d3d3d3;
+    --hover-white: #000000;
+    --gameBG: #e3e3e3;
 }
