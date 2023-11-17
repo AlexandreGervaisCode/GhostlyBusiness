@@ -646,6 +646,10 @@ function goToChapter(chapterKey) {
 
         // twist
         if (chapterInput === chaptersObj.begin) {
+            localStorage.removeItem("twistPizza");
+            localStorage.removeItem("twistSolo");
+            localStorage.removeItem("twistPro");
+            localStorage.removeItem("twistVraie");
             pizza = false;
             solo = false;
             mysteryInc = false;
@@ -653,6 +657,7 @@ function goToChapter(chapterKey) {
         }
 
         if (chapterInput === chaptersObj.confrontationPizza) {
+            localStorage.setItem("twistPizza", true);
             pizza = true;
             solo = false;
             mysteryInc = false;
@@ -660,6 +665,7 @@ function goToChapter(chapterKey) {
         }
 
         if (chapterInput === chaptersObj.confrontationSolo) {
+            localStorage.setItem("twistSolo", true);
             pizza = false;
             solo = true;
             mysteryInc = false;
@@ -667,6 +673,7 @@ function goToChapter(chapterKey) {
         }
 
         if (chapterInput === chaptersObj.confrontationPro) {
+            localStorage.setItem("twistPro", true);
             pizza = false;
             solo = false;
             mysteryInc = true;
@@ -674,6 +681,7 @@ function goToChapter(chapterKey) {
         }
 
         if (chapterInput === chaptersObj.confrontationVraie) {
+            localStorage.setItem("twistVraie", true);
             pizza = false;
             solo = false;
             mysteryInc = false;
@@ -774,10 +782,6 @@ function goToChapter(chapterKey) {
 
         // Rappel des éléments
         localStorage.setItem("progress", chapterKey);
-        localStorage.setItem("twistPizza", pizza);
-        localStorage.setItem("twistSolo", solo);
-        localStorage.setItem("twistPro", mysteryInc);
-        localStorage.setItem("twistVraie", vraieFin);
 
         // Boucle Boutons
         const boutons = document.querySelector('#button-container');
@@ -828,14 +832,33 @@ function checkAch(){
 }
 const checking = setInterval(checkAch, 1000);
 
-// If achievement linked to light mode is unlocked, remove light mode
 
 if (localStorage.getItem("progress")) {
     let currentProgress = localStorage.getItem("progress");
-    let pizzaTwist = localStorage.getItem("twistPizza");
-    let soloTwist = localStorage.getItem("twistSolo");
-    let proTwist = localStorage.getItem("twistPro");
-    let trueTwist = localStorage.getItem("twistVraie");
+    if (localStorage.getItem("twistPizza")) {
+        pizza = true;
+        solo = false;
+        mysteryInc = false;
+        vraieFin = false;
+    }
+    if (localStorage.getItem("twistSolo")) {
+        pizza = false;
+        solo = true;
+        mysteryInc = false;
+        vraieFin = false;
+    }
+    if (localStorage.getItem("twistPro")) {
+        pizza = false;
+        solo = false;
+        mysteryInc = true;
+        vraieFin = false;
+    }
+    if (localStorage.getItem("twistVraie")) {
+        pizza = false;
+        solo = false;
+        mysteryInc = false;
+        vraieFin = true;
+    }
     // Remove locked from obtained Achievements in localStorage
     let i = 0;
     for (let ach in achievementObj) {
@@ -850,13 +873,8 @@ if (localStorage.getItem("progress")) {
         successAudio.play();
     }
     achievementObj.comeback.unlock = true;
-
-    pizza = pizzaTwist;
-    solo = soloTwist;
-    mysteryInc = proTwist;
-    vraieFin = trueTwist
-    if (currentProgress === "armoire" || currentProgress === "etagere" || currentProgress === "aspirateur") {
-        if (pizza === "true") {
+    if (currentProgress) {
+        if (pizza === true) {
             chaptersObj.armoire.buttons[0].destination = "finPizza";
             chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finPizza";
@@ -865,7 +883,7 @@ if (localStorage.getItem("progress")) {
             chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
 
-        if (solo === "true") {
+        if (solo === true) {
             chaptersObj.armoire.buttons[0].destination = "finSolo";
             chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finSolo";
@@ -874,7 +892,7 @@ if (localStorage.getItem("progress")) {
             chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/goodChoice.mp3";
         }
 
-        if (mysteryInc === "true") {
+        if (mysteryInc === true) {
             chaptersObj.armoire.buttons[0].destination = "finPro";
             chaptersObj.armoire.buttons[0].sound = "../assets/audio/badChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finPro";
@@ -883,7 +901,7 @@ if (localStorage.getItem("progress")) {
             chaptersObj.aspirateur.buttons[0].sound = "../assets/audio/badChoice.mp3";
         }
 
-        if (vraieFin === "true") {
+        if (vraieFin === true) {
             chaptersObj.armoire.buttons[0].destination = "finVraie";
             chaptersObj.armoire.buttons[0].sound = "../assets/audio/goodChoice.mp3";
             chaptersObj.etagere.buttons[0].destination = "finVraie";
