@@ -4,24 +4,24 @@ const chaptersObj = {
         titre: `L'appel`,
         description: `Vous recevez l'appel d'un client qui souhaite se débarasser d'un fantôme chez lui. Ceci est votre première aventure paranormal, donc vous considèrez faire un appel pour de l'aide. Qui appeler?`,
         image: false,
-        video: "../assets/video/begin.mp4",
-        sound: "../assets/audio/ambiance.mp3",
+        video: "./assets/video/begin.mp4",
+        sound: "./assets/audio/ambiance.mp3",
         buttons: [{
                 titre: "Domino's",
                 destination: "confrontationPizza",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Commander une pizza"
             },
             {
                 titre: "Personne",
                 destination: "confrontationSolo",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Y aller seul"
             },
             {
                 titre: "Professionels",
                 destination: "confrontationPro",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Appeler des professionnels en backup"
             }
         ]
@@ -31,25 +31,25 @@ const chaptersObj = {
     confrontationPizza: {
         titre: `Face-à-Face`,
         description: `Après avoir commandé votre récompense pour après l'investigation, vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "../assets/image/confrontation.jpg",
+        image: "./assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/trouble.mp3",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "N'appuyez pas sur ce bouton"
             }
         ]
@@ -59,25 +59,25 @@ const chaptersObj = {
     confrontationSolo: {
         titre: `Face-à-Face`,
         description: `Après un peu de réflexion, vous déterminez que vous pouvez réussir seul. Vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "../assets/image/confrontation.jpg",
+        image: "./assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/trouble.mp3",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "N'appuyez pas sur ce bouton"
             }
         ]
@@ -87,25 +87,25 @@ const chaptersObj = {
     confrontationPro: {
         titre: `Face-à-Face`,
         description: `Les meilleurs chasseurs de créatures paranormals vont arriver sous-peu en back-up, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "../assets/image/confrontation.jpg",
+        image: "./assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/trouble.mp3",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "N'appuyez pas sur ce bouton"
             }
         ]
@@ -115,25 +115,25 @@ const chaptersObj = {
     confrontationVraie: {
         titre: `Face-à-Face`,
         description: `Les meilleurs chasseurs de créatures paranormals et une bonne pizza vont arriver sous-peu, en attendent vous allez à la maison du client et vous entrez. La porte se ferme derrière vous et vous êtes face-à-face avec le fantôme. Comment survivre ?`,
-        image: "../assets/image/confrontation.jpg",
+        image: "./assets/image/confrontation.jpg",
         video: false,
-        sound: "../assets/audio/trouble.mp3",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Confusion",
                 destination: "mortDistraction",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Rendre le fantôme confus"
             },
             {
                 titre: "Fuir",
                 destination: "cachette",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Fuir du fantôme"
             },
             {
                 titre: "Rien",
                 destination: "mortRien",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "N'appuyez pas sur ce bouton"
             }
         ]
@@ -143,25 +143,25 @@ const chaptersObj = {
     cachette: {
         titre: `Cache-Cache`,
         description: `Vous fuiez du fantôme, mais il vous poursuis à grande vitesse. Au lieu de continuer à fuir, vous décidez que se cacher serait la meilleure solution pour survire, mais où se cacher ?`,
-        image: "../assets/image/cachette.jpg",
+        image: "./assets/image/cachette.jpg",
         video: false,
-        sound: "../assets/audio/trouble.mp3",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Chambre",
                 destination: "chambre",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Aller se cacher dans la chambre"
             },
             {
                 titre: "Cuisine",
                 destination: "cuisine",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Aller se cacher dans la cuisine"
             },
             {
                 titre: "Garage",
                 destination: "garage",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Aller se cacher dans le garage"
             }
         ]
@@ -172,24 +172,24 @@ const chaptersObj = {
         titre: `Des moutons et des barrières mortelles`,
         description: `Vous êtes maintenant caché derrière une armoire, avec quelques autres cachettes à proximité, dans une chambre. Où se cacher ?`,
         image: false,
-        video: "../assets/video/cachette-chambre.mp4",
-        sound: "../assets/audio/trouble.mp3",
+        video: "./assets/video/cachette-chambre.mp4",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Sous le lit",
                 destination: "mortLit",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Aller se cacher sous le lit"
             },
             {
                 titre: "Armoire",
                 destination: "mortArmoire",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Se cacher dans l'armoire"
             },
             {
                 titre: "Attendre",
                 destination: "armoire",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Rester derrière l'armoire"
             }
         ]
@@ -199,18 +199,18 @@ const chaptersObj = {
         titre: `Hell's Kitchen`,
         description: `Vous êtes maintenant caché derrière un comptoir, avec divers outils sur le comptoir, dans la cuisine. Quelle est votre prochaine action ?`,
         image: false,
-        video: "../assets/video/cachette-cuisine.mp4",
-        sound: "../assets/audio/trouble.mp3",
+        video: "./assets/video/cachette-cuisine.mp4",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Attendre",
                 destination: "mortCuisineRien",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Ne pas bouger"
             },
             {
                 titre: "Couteau",
                 destination: "mortCouteau",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Se armer d'un couteau"
             }
         ]
@@ -220,24 +220,24 @@ const chaptersObj = {
         titre: `Pit Stop`,
         description: `Vous êtes maintenant caché derrière une étagère, entouré de différents objets, dans le garage. Quelle est votre prochaine action ?`,
         image: false,
-        video: "../assets/video/cachette-garage.mp4",
-        sound: "../assets/audio/trouble.mp3",
+        video: "./assets/video/cachette-garage.mp4",
+        sound: "./assets/audio/trouble.mp3",
         buttons: [{
                 titre: "Attendre",
                 destination: "etagere",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Rester derrière l'étagère"
             },
             {
                 titre: "Voiture",
                 destination: "mortVoiture",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Aller se cacher en-dessous la voiture"
             },
             {
                 titre: "Aspirateur",
                 destination: "aspirateur",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Prendre l'aspirateur dans le coin de la salle"
             }
         ]
@@ -247,13 +247,13 @@ const chaptersObj = {
     armoire: {
         titre: "Introuvable",
         description: "Vous décider de rester derrière l'armoire. Le fantôme ne vous trouve pas.",
-        image: "../assets/image/armoire.jpg",
+        image: "./assets/image/armoire.jpg",
         video: false,
-        sound: "../assets/audio/heartbeat.mp3",
+        sound: "./assets/audio/heartbeat.mp3",
         buttons: [{
             titre: "Fin",
             destination: "compagnon",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Accèder à la fin de cette aventure"
         }]
     },
@@ -261,13 +261,13 @@ const chaptersObj = {
     etagere: {
         titre: "Introuvable",
         description: "Vous décider de rester derrière l'étagère. Le fantôme ne vous trouve pas.",
-        image: "../assets/image/etagere.jpg",
+        image: "./assets/image/etagere.jpg",
         video: false,
-        sound: "../assets/audio/heartbeat.mp3",
+        sound: "./assets/audio/heartbeat.mp3",
         buttons: [{
             titre: "Fin",
             destination: "compagnon",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Accèder à la fin de cette aventure"
         }]
     },
@@ -275,13 +275,13 @@ const chaptersObj = {
     aspirateur: {
         titre: "Introuvable",
         description: "Vous prenez le vieil aspirateur dans le coin de la salle. Vous essayez de faire fonctionner l'aspirateur pour attraper ce fantôme à la Luigi. L'aspirateur ne fonctionne juste plus. Vous décidez de ne plus faire de bruit et de rester dans le coin. Le fantôme ne vous trouve pas.",
-        image: "../assets/image/aspirateur.jpg",
+        image: "./assets/image/aspirateur.jpg",
         video: false,
-        sound: "../assets/audio/heartbeat.mp3",
+        sound: "./assets/audio/heartbeat.mp3",
         buttons: [{
             titre: "Fin",
             destination: "compagnon",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Accèder à la fin de cette aventure"
         }]
     },
@@ -290,25 +290,25 @@ const chaptersObj = {
     compagnon: {
         titre: `Compagnon`,
         description: `Qui avez vous appelez avant votre investigation ?`,
-        image: "../assets/image/compagnon.jpg",
+        image: "./assets/image/compagnon.jpg",
         video: false,
-        sound: "../assets/audio/an_error_has_occured.mp3",
+        sound: "./assets/audio/an_error_has_occured.mp3",
         buttons: [{
                 titre: "Domino's",
                 destination: "finPizza",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Fin Acceptable"
             },
             {
                 titre: "Personne",
                 destination: "finSolo",
-                sound: "../assets/audio/goodChoice.mp3",
+                sound: "./assets/audio/goodChoice.mp3",
                 hover: "Bonne Fin"
             },
             {
                 titre: "Professionels",
                 destination: "finPro",
-                sound: "../assets/audio/badChoice.mp3",
+                sound: "./assets/audio/badChoice.mp3",
                 hover: "Mauvais Fin"
             }
         ]
@@ -318,13 +318,13 @@ const chaptersObj = {
     finPizza: {
         titre: "Fin Acceptable",
         description: "Quelqu'un sonne à la porte. Peu après, le fantôme libère un cri de douleur. Le livreur de pizza a défoncé le fantôme car il n'a pas été donné un pourboire. Malheureusement pour vous, le livreur de pizza se fait payer pour s'avoir occuper du fantôme... Vous avez au moins de la pizza...",
-        image: "../assets/image/end-pizza.jpg",
+        image: "./assets/image/end-pizza.jpg",
         video: false,
-        sound: "../assets/audio/okay_ending.mp3",
+        sound: "./assets/audio/okay_ending.mp3",
         buttons: [{
             titre: "Redébuter",
             destination: "begin",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -333,13 +333,13 @@ const chaptersObj = {
     finSolo: {
         titre: "Bonne Fin",
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Il s'enfuit de la maison. Vous avez réussi ! Mais votre client a maintenant une bosse sur la tête...",
-        image: "../assets/image/end-solo.jpg",
+        image: "./assets/image/end-solo.jpg",
         video: false,
-        sound: "../assets/audio/good_ending.mp3",
+        sound: "./assets/audio/good_ending.mp3",
         buttons: [{
             titre: "Redébuter",
             destination: "begin",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Retouner au début"
         }]
     },
@@ -348,13 +348,13 @@ const chaptersObj = {
     finPro: {
         titre: "Mauvaise Fin",
         description: "Les professionels arrivent et, croyant que vous êtes le monstre, vous arrêtes. Même dans votre cellule dans la prison, vous entendez le cri du chien des professionnels... SCOOBY-DOO-BY DOOO !",
-        image: "../assets/image/end-scooby.jpg",
+        image: "./assets/image/end-scooby.jpg",
         video: false,
-        sound: "../assets/audio/bad_ending.mp3",
+        sound: "./assets/audio/bad_ending.mp3",
         buttons: [{
             titre: "Redébuter",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -364,12 +364,12 @@ const chaptersObj = {
         titre: "Vraie Fin",
         description: "Vous attendez pour attaquer le fantôme depuis derrière. Pendant que le fantôme est à terre, les professionnels, Mystery Incorporated, arrivent sur la scène et arrête le fantôme. Le chef de Mystery Inc enlève le masque du fantôme, révèlant votre client. Votre client est arrété, vous êtes payé par la police pour votre arrêt. Votre pizza arrive et vous la savourez avec vos nouveaux amis de Mystery Inc.",
         image: false,
-        video: "../assets/video/best-ending.mp4",
-        sound: "../assets/audio/best-ending.mp3",
+        video: "./assets/video/best-ending.mp4",
+        sound: "./assets/audio/best-ending.mp3",
         buttons: [{
             titre: "Redébuter",
             destination: "begin",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -378,13 +378,13 @@ const chaptersObj = {
     blindingLight: {
         titre: "...Victoire ?",
         description: "Vous avez tué le fantôme avec votre lumière intense, mais vous êtes probablement également aveugle. Pourquoi avez-vous activé le mode clair ? Peu importe votre raison, personne d'autre est capable de l'endurer, donc dites au revoir au mode clair.",
-        image: "../assets/image/end-light.jpg",
+        image: "./assets/image/end-light.jpg",
         video: false,
-        sound: "../assets/audio/okay_ending.mp3",
+        sound: "./assets/audio/okay_ending.mp3",
         buttons: [{
             titre: "Redébuter",
             destination: "begin",
-            sound: "../assets/audio/goodChoice.mp3",
+            sound: "./assets/audio/goodChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -394,12 +394,12 @@ const chaptersObj = {
         titre: "...Quoi ?",
         description: "Vous ne faites... rien ? Le fantôme vous étrangle. Vous vous attendiez à quoi exactement ?",
         image: false,
-        video: "../assets/video/mort-rien.mp4",
-        sound: "../assets/audio/fail_nothing.mp3",
+        video: "./assets/video/mort-rien.mp4",
+        sound: "./assets/audio/fail_nothing.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Je n'ai aucun mot"
         }]
     },
@@ -408,12 +408,12 @@ const chaptersObj = {
         titre: "Distraction !",
         description: "Vous tentez de distraire le fantôme en dansant. Peut-être que ça va le rendre confus ! ... il s'approche de vous et vous casse le cou. Vous n'auriez probablement pas avoir fait une dance Fortnite...",
         image: false,
-        video: "../assets/video/mort-distraction.mp4",
-        sound: "../assets/audio/fail_dance.mp3",
+        video: "./assets/video/mort-distraction.mp4",
+        sound: "./assets/audio/fail_dance.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -422,13 +422,13 @@ const chaptersObj = {
     mortLit: {
         titre: "Un Nouveau Problème...",
         description: "Vous allez vous cacher sous le lit non détecté. Vous entendez une respiration derrière vous... Oh non. On dirait qu'il y a un monstre sous ce lit.",
-        image: "../assets/image/mort-lit.jpg",
+        image: "./assets/image/mort-lit.jpg",
         video: false,
-        sound: "../assets/audio/fail.mp3",
+        sound: "./assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -436,13 +436,13 @@ const chaptersObj = {
     mortArmoire: {
         titre: "Hors du Placard",
         description: "Vous allez vous cacher dans l'armoire. Le fantôme vous a entendu ouvrir l'armoire. On dirait que vous aller rester dans cette armoire, mais sans votre vie.",
-        image: "../assets/image/mort-armoire.jpg",
+        image: "./assets/image/mort-armoire.jpg",
         video: false,
-        sound: "../assets/audio/fail.mp3",
+        sound: "./assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -452,12 +452,12 @@ const chaptersObj = {
         titre: "Trouvé !",
         description: "Vous vous cachez derrière un comptoir dans la cuisine, mais, malheureusement pour vous, le fantôme a décidé de vérifiez la cuisine en premier comme salle. Il vous trouve et vous étrangle...",
         image: false,
-        video: "../assets/video/mort-cuisine.mp4",
-        sound: "../assets/audio/fail.mp3",
+        video: "./assets/video/mort-cuisine.mp4",
+        sound: "./assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -465,13 +465,13 @@ const chaptersObj = {
     mortCouteau: {
         titre: "Mauvais Couteau",
         description: "Vous prenez un couteau sur le comptoir. Le fantôme vous voit et s'approche. Vous tentez de le poignarder. Attendez une seconde, vous avez prit un couteau à BEURRE quand il y avait un couteau pointu DIRECTEMENT à côté !? Vous êtes étranglé par le fantôme. Vous le méritez probablement.",
-        image: "../assets/image/mort-couteau.jpg",
+        image: "./assets/image/mort-couteau.jpg",
         video: false,
-        sound: "../assets/audio/fail.mp3",
+        sound: "./assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -480,13 +480,13 @@ const chaptersObj = {
     mortVoiture: {
         titre: "Bon Déjeuné !",
         description: "Vous allez sous la voiture dans le garage. Après un bout de temps, la voiture démarre... et se met à rouler. Vous devenez une crêpe couverte de sang. Kachow !",
-        image: "../assets/image/mort-voiture.jpg",
+        image: "./assets/image/mort-voiture.jpg",
         video: false,
-        sound: "../assets/audio/fail.mp3",
+        sound: "./assets/audio/fail.mp3",
         buttons: [{
             titre: "Recommencer",
             destination: "begin",
-            sound: "../assets/audio/badChoice.mp3",
+            sound: "./assets/audio/badChoice.mp3",
             hover: "Retourner au début"
         }]
     },
@@ -501,6 +501,7 @@ const body = document.querySelector("body");
 const reset = document.querySelector("#reset");
 const btnLight = document.querySelector("#light");
 const btnSuccess = document.querySelector("#success");
+const btnMute = document.querySelector("#mute");
 const bgMusic = document.createElement("audio");
 const soundEffect = document.createElement("audio");
 const containerAchievement = document.querySelector(".achievement-container");
@@ -985,4 +986,44 @@ function checkCompletionnist(){
         achievementObj.complete.unlock = true;
     }
 }
+
+let mute = true;
+if (localStorage.getItem("ismute")){
+    if(localStorage.getItem("ismute") === "true"){
+        mute = true;
+        btnMute.textContent = "🔇";
+        bgMusic.volume = 0;
+        soundEffect.volume = 0;
+        successAudio.volume = 0;
+        heartbeat.volume = 0;
+    } else if (localStorage.getItem("ismute") === "false"){
+        mute = false;
+        btnMute.textContent = "🔊";
+        bgMusic.volume = 0.8;
+        soundEffect.volume = 0.7;
+        successAudio.volume = 0.5;
+        heartbeat.volume = 1;
+    }
+}
+
+btnMute.addEventListener("click", function(){
+    if (mute === false || muteStr === "false"){
+        btnMute.textContent = "🔇";
+        mute = true;
+        localStorage.setItem("ismute", mute);
+        bgMusic.volume = 0;
+        soundEffect.volume = 0;
+        successAudio.volume = 0;
+        heartbeat.volume = 0;
+    } else if (mute === true || muteStr === "true"){
+        btnMute.textContent = "🔊";
+        mute = false;
+        localStorage.setItem("ismute", mute);
+        bgMusic.volume = 0.8;
+        soundEffect.volume = 0.7;
+        successAudio.volume = 0.5;
+        heartbeat.volume = 1;
+    }
+});
+const muteStr = localStorage.getItem("ismute");
 let checkComplete = setInterval(checkCompletionnist, 3000);

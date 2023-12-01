@@ -225,3 +225,47 @@ header{
     --hover-white: #000000;
     --gameBG: #e3e3e3;
 }
+
+/*Tablette*/
+@media screen and (max-width: 768px) {
+    body{
+        min-width: 425px;
+        align-content: flex-start;
+    }
+    #Ghostly-Business{
+        width: 80%;
+        min-width: 300px;
+        height: 70%;
+    }
+    header{
+        flex-wrap: wrap;
+    }
+    .navigation{
+        flex-basis: 49.4%;
+    }
+    .achievement-container{
+        min-width: 300px;
+        width: 80%;
+    }
+}
+
+/*Mobile Large*/
+@media screen and (max-width: 425px) {
+    header{
+        flex-wrap: wrap;
+    }
+    .navigation{
+        flex-basis: 97%;
+    }
+}
+
+/*Mobile Petit*/
+@media screen and (max-width: 320px) {
+    header{
+        flex-wrap: wrap;
+    }
+    .navigation{
+        flex-basis: 97%;
+        margin-top: 1%;
+    }
+}
