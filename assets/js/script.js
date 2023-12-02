@@ -600,8 +600,8 @@ const achievementObj = {
         achHtml: allAchievement[10],
     },
     complete: {
-        titre: `The Completionist`,
-        lockedText: `TC`,
+        titre: `Ghostly God`,
+        lockedText: `GG`,
         description: `Vous avez 100% Ghostly Business. Wow, juste wow. Vous n'avez vraiment rien de mieux à faire.`,
         unlock: false,
         achHtml: allAchievement[11],

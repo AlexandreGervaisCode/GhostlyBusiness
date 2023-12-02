@@ -226,16 +226,21 @@ header{
     --gameBG: #e3e3e3;
 }
 
-/*Tablette*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     body{
         min-width: 425px;
         align-content: flex-start;
+        text-shadow: 0 0 20px #000000;
     }
     #Ghostly-Business{
         width: 80%;
         min-width: 300px;
         height: 70%;
+    }
+    .choice{
+        font-size: 30%;
+        min-height: 20px;
+        min-width: 30px;
     }
     header{
         flex-wrap: wrap;
@@ -249,23 +254,39 @@ header{
     }
 }
 
-/*Mobile Large*/
 @media screen and (max-width: 425px) {
+    body{
+        text-shadow: 0 0 10px #000000;
+    }
+    .choice{
+        font-size: 30%;
+        min-height: 17px;
+        min-width: 25px;
+    }
     header{
         flex-wrap: wrap;
+        background-color: rgba(00, 00, 00, 00);
     }
     .navigation{
-        flex-basis: 97%;
+        flex-basis: 96%;
     }
 }
 
-/*Mobile Petit*/
 @media screen and (max-width: 320px) {
+    body{
+        text-shadow: 0 0 10px #000000;
+    }
+    .choice{
+        font-size: 30%;
+        min-height: 15px;
+        min-width: 20px;
+    }
     header{
         flex-wrap: wrap;
+        background-color: rgba(00, 00, 00, 00);
     }
     .navigation{
-        flex-basis: 97%;
+        flex-basis: 98%;
         margin-top: 1%;
     }
 }
